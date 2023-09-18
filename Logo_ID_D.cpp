@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -34,7 +35,7 @@ void tetapkan_warna(Warna warna)
     switch (warna)
     {
     case Merah:
-        kode_warna = FOREGRROUND_RED;
+        kode_warna = FOREGROUND_RED;
         break;
     case Hijau:
         kode_warna = FOREGROUND_GREEN;
@@ -58,7 +59,7 @@ void tetapkan_warna(Warna warna)
         return;
         break;
     }
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), warna);
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), kode_warna);
 #else
     string kode_warna;
     switch (warna)
@@ -92,57 +93,93 @@ void tetapkan_warna(Warna warna)
 #endif
 }
 
+unsigned int panjang_terminal()
+{
+#ifdef _WIN32
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    return csbi.srWindow.Right - csbi.srWindow.Left + 1;
+#else
+    winsize w;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+    return w.ws_col;
+#endif
+}
+
 using namespace std;
 
 int main()
 {
     string logo_if[] = {
-        "██╗███████╗",
-        "██║██╔════╝",
-        "██║█████╗",
-        "██║██╔══╝",
-        "██║██║   ",
-        "╚═╝╚═╝   ",
+        " /$$$$$$ /$$$$$$$$",
+        "|_  $$_/| $$_____/",
+        "  | $$  | $$      ",
+        "  | $$  | $$$$$",
+        "  | $$  | $$__/",
+        "  | $$  | $$   ",
+        " /$$$$$$| $$   ",
+        "|______/|__/   ",
     };
     string logo_strip_1[] = {
-        "    ",
-        "    ",
-        "█████╗",
-        "╚════╝",
-        "      ",
-        "      ",
+        "     ",
+        "     ",
+        "     ",
+        " /$$$$$$",
+        "|______/",
+        "        ",
+        "        ",
+        "        ",
     };
 
     string logo_d[] = {
-        "██████╗ ",
-        "██╔══██╗",
-        "██║  ██║",
-        "██║  ██║",
-        "██████╔╝",
-        "╚═════╝ ",
+        " /$$$$$$$ ",
+        "| $$__  $$",
+        "| $$  \\ $$",
+        "| $$  | $$",
+        "| $$  | $$",
+        "| $$  | $$",
+        "| $$$$$$$/",
+        "|_______/ ",
     };
 
     string logo_strip_2[] = {
-        "      ",
-        "      ",
-        "█████╗",
-        "╚════╝",
-        "      ",
-        "      ",
+        "       ",
+        "       ",
+        "       ",
+        " /$$$$$$",
+        "|______/",
+        "       ",
+        "       ",
+        "       ",
     };
 
     string logo_23[] = {
-        "██████╗ ██████╗ ",
-        "╚════██╗╚════██╗",
-        " █████╔╝ █████╔╝",
-        "██╔═══╝  ╚═══██╗",
-        "███████╗██████╔╝",
-        "╚══════╝╚═════╝ ",
+        "  /$$$$$$   /$$$$$$ ",
+        " /$$__  $$ /$$__  $$",
+        "|__/  \\ $$|__/  \\ $$",
+        " /$$$$$$/   /$$$$$/",
+        "/$$____/   |___  $$",
+        "| $$       /$$  \\ $$",
+        "| $$$$$$$$|  $$$$$$/",
+        "|________/ \\______/ ",
     };
+
+    const int jumlah_kolom = logo_if[0].length() + logo_strip_1[0].length() + logo_d[0].length() + logo_strip_2[0].length() + logo_23[0].length();
+    const int kolom_terminal = panjang_terminal();
+    int margin;
+    if (jumlah_kolom > kolom_terminal)
+    {
+        tetapkan_warna(Merah);
+        cout << "Logo mungkin tidak ditampilkan dengan benar" << endl;
+        tetapkan_warna(Bawaan);
+    } else {
+        margin = kolom_terminal / 2 - jumlah_kolom / 2;
+    }
 
     const int jumlah_baris = sizeof(logo_if) / sizeof(string);
     for (int i = 0; i < jumlah_baris; i++)
     {
+        cout << setw(margin) << "";
         tetapkan_warna(Hijau);
         cout << logo_if[i];
         tetapkan_warna(Ungu);
