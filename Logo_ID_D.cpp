@@ -132,14 +132,14 @@ int main()
     };
 
     string logo_d[] = {
-        " /$$$$$$$ ",
-        "| $$__  $$",
-        "| $$  \\ $$",
-        "| $$  | $$",
-        "| $$  | $$",
-        "| $$  | $$",
-        "| $$$$$$$/",
-        "|_______/ ",
+        " /$$$$$$$   ",
+        "| $$__  $$  ",
+        "| $$  \\  $$ ",
+        "| $$   \\  $$",
+        "| $$    /$$/",
+        "| $$   /$$/ ",
+        "| $$$$$$$/  ",
+        "|_______/   ",
     };
 
     string logo_strip_2[] = {
@@ -172,7 +172,9 @@ int main()
         tetapkan_warna(Merah);
         cout << "Logo mungkin tidak ditampilkan dengan benar" << endl;
         tetapkan_warna(Bawaan);
-    } else {
+    }
+    else
+    {
         margin = kolom_terminal / 2 - jumlah_kolom / 2;
     }
 
