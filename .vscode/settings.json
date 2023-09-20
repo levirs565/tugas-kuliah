@@ -3,6 +3,7 @@
         "iostream": "cpp",
         "*.tcc": "cpp",
         "ostream": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "initializer_list": "cpp"
     }
 }
