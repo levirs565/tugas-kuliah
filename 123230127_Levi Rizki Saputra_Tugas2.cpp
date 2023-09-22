@@ -24,86 +24,129 @@ using namespace std;
     Dibutuhkan fungsi yang berbeda untuk mewarnai stdout
 */
 
-#ifdef _WIN32
-void windows_tetapkan_warna(WORD warna)
+namespace UtilitasTerminal
 {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), warna);
-}
-#else
-void ansi_tetapkan_warna(string warna)
-{
-    cout << "\033[" << warna << "m";
-}
-#endif
 
-void warna_merah()
-{
-#ifdef _WIN32
-    windows_tetapkan_warna(FOREGROUND_RED);
-#else
-    ansi_tetapkan_warna("31");
-#endif
-}
+    /*
+        Fungsi pewarnaan cout
+        Sistem non-Windows mendukung ANSI escape
+        Windows tidak menundkung ANSI escape
+        Dibutuhkan fungsi yang berbeda untuk mewarnai stdout
+    */
 
-void warna_biru()
-{
-#ifdef _WIN32
-    windows_tetapkan_warna(FOREGROUND_BLUE | FOREGROUND_GREEN);
-#else
-    ansi_tetapkan_warna("36");
-#endif
-}
+    enum Warna
+    {
+        Merah,
+        Biru,
+        Kuning,
+        Hijau,
+        Bawaan,
+        LatarHijau
+    };
 
-void warna_kuning()
-{
+    void tetapkan_warna(Warna warna)
+    {
 #ifdef _WIN32
-    windows_tetapkan_warna(FOREGROUND_RED | FOREGROUND_GREEN);
+        WORD kode_warna;
+        switch (warna)
+        {
+        case Merah:
+            kode_warna = FOREGROUND_RED;
+            break;
+        case Hijau:
+            kode_warna = FOREGROUND_GREEN;
+            break;
+        case Kuning:
+            kode_warna = FOREGROUND_RED | FOREGROUND_GREEN;
+            break;
+        case Biru:
+            kode_warna = FOREGROUND_BLUE | FOREGROUND_GREEN;
+            break;
+        case LatarHijau:
+            kode_warna = BACKGROUND_GREEN;
+            break;
+        case Bawaan:
+            kode_warna = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+            break;
+        default:
+            return;
+            break;
+        }
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), kode_warna);
 #else
-    ansi_tetapkan_warna("33");
+        string kode_warna;
+        switch (warna)
+        {
+        case Merah:
+            kode_warna = "31";
+            break;
+        case Hijau:
+            kode_warna = "32";
+            break;
+        case Kuning:
+            kode_warna = "33";
+            break;
+        case Biru:
+            kode_warna = "36";
+            break;
+        case LatarHijau:
+            kode_warna = "42";
+            break;
+        case Bawaan:
+            kode_warna = "0";
+            break;
+        default:
+            return;
+            break;
+        }
+        cout << "\033[" << kode_warna << "m";
 #endif
-}
+    }
 
-void warna_latar_hijau()
-{
+    unsigned int jumlah_kolom()
+    {
 #ifdef _WIN32
-    windows_tetapkan_warna(BACKGROUND_GREEN);
+        CONSOLE_SCREEN_BUFFER_INFO csbi;
+        GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+        return csbi.srWindow.Right - csbi.srWindow.Left + 1;
 #else
-    ansi_tetapkan_warna("42");
+        winsize w;
+        ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+        return w.ws_col;
 #endif
-}
-
-void warna_hijau()
-{
-#ifdef _WIN32
-    windows_tetapkan_warna(FOREGROUND_GREEN);
-#else
-    ansi_tetapkan_warna("32");
-#endif
-}
-
-void warna_bawaan()
-{
-#ifdef _WIN32
-    windows_tetapkan_warna(7);
-#else
-    ansi_tetapkan_warna("0");
-#endif
-}
-
-unsigned int panjang_terminal()
-{
-#ifdef _WIN32
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    return csbi.srWindow.Right - csbi.srWindow.Left + 1;
-#else
-    winsize w;
-    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-    return w.ws_col;
-#endif
-}
+    }
 
 #define PANJANG_PROMPT 15
+
+    void tampilkan_prompt(string pertanyaan)
+    {
+
+        tetapkan_warna(Kuning);
+        cout << left << setw(PANJANG_PROMPT) << pertanyaan
+             << ": ";
+        tetapkan_warna(Bawaan);
+    }
+
+    void tampilkan_error(string error)
+    {
+        tetapkan_warna(Merah);
+        cout << error << endl;
+        tetapkan_warna(Bawaan);
+    }
+
+#define HEADING_PADDING 2
+
+    void tampilkan_heading(string nama)
+    {
+        const int margin = jumlah_kolom() / 2 - nama.length() / 2 - HEADING_PADDING;
+        cout << setw(margin) << "";
+        tetapkan_warna(LatarHijau);
+        cout << setw(HEADING_PADDING) << "" << nama << setw(HEADING_PADDING) << "";
+        tetapkan_warna(Bawaan);
+        cout << endl
+             << endl;
+    }
+}
 
 /*
     Mengubah string ke angka
@@ -115,28 +158,6 @@ bool string_ke_angka(string teks, int *output)
     char *endptr;
     *output = (int)strtoll(teks.c_str(), &endptr, 10);
     return *endptr == '\0';
-}
-
-void tampilkan_prompt(string pertanyaan)
-{
-
-    warna_kuning();
-    cout << left << setw(PANJANG_PROMPT) << pertanyaan
-         << ": ";
-    warna_bawaan();
-}
-
-#define HEADING_PADDING 2
-
-void tampilkan_heading(string nama)
-{
-    const int margin = panjang_terminal() / 2 - nama.length() / 2 - HEADING_PADDING;
-    cout << setw(margin) << "";
-    warna_latar_hijau();
-    cout << setw(HEADING_PADDING) << "" << nama << setw(HEADING_PADDING) << "";
-    warna_bawaan();
-    cout << endl
-         << endl;
 }
 
 /*
@@ -152,22 +173,18 @@ string input_id(string prompt)
     string id;
     while (true)
     {
-        tampilkan_prompt(prompt);
+        UtilitasTerminal::tampilkan_prompt(prompt);
         getline(cin, id);
 
         if (id.find(' ') != string::npos)
         {
-            warna_merah();
-            cout << "Tidak boleh ada spasi di dalam ID" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Tidak boleh ada spasi di dalam ID");
             continue;
         }
 
         if (id.length() == 0)
         {
-            warna_merah();
-            cout << "ID tidak boleh kosong" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("ID tidak boleh kosong");
             continue;
         }
 
@@ -189,13 +206,12 @@ string input_judul(string prompt)
 
     while (true)
     {
-        tampilkan_prompt(prompt);
+        UtilitasTerminal::tampilkan_prompt(prompt);
         getline(cin, judul);
         if (judul.length() == 0)
         {
-            warna_merah();
-            cout << "Judul tidak boleh kosong." << endl;
-            warna_bawaan();
+
+            UtilitasTerminal::tampilkan_error("Judul tidak boleh kosong.");
             continue;
         }
         break;
@@ -218,10 +234,10 @@ void input_tanggal(string prompt, int *tanggal, int *bulan, int *tahun)
     string input;
     while (true)
     {
-        tampilkan_prompt(prompt);
-        warna_biru();
+        UtilitasTerminal::tampilkan_prompt(prompt);
+        UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Biru);
         cout << "(" << format_tanggal << ") ";
-        warna_bawaan();
+        UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Bawaan);
         getline(cin, input);
 
         // dd/mm/yyyy
@@ -230,55 +246,41 @@ void input_tanggal(string prompt, int *tanggal, int *bulan, int *tahun)
 
         if (input.length() != format_tanggal.length() || input.at(2) != '/' || input.at(5) != '/')
         {
-            warna_merah();
-            cout << "Format tanggal tidak valid. Gunakan format " << format_tanggal << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Format tanggal tidak valid. Gunakan format");
             continue;
         }
 
         if (!string_ke_angka(input.substr(0, 2), tanggal))
         {
-            warna_merah();
-            cout << "Tanggal tidak sepenuhnya angka" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Tanggal tidak sepenuhnya angka");
             continue;
         }
         if (!string_ke_angka(input.substr(3, 2), bulan))
         {
-            warna_merah();
-            cout << "Bulan tidak sepenuhnya angka" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Bulan tidak sepenuhnya angka");
             continue;
         }
         if (!string_ke_angka(input.substr(6, 4), tahun))
         {
-            warna_merah();
-            cout << "Tahun tidak sepenuhnya angka" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Tahun tidak sepenuhnya angka");
             continue;
         }
 
         if (*tanggal < 1 || *tanggal > 31)
         {
-            warna_merah();
-            cout << "Tanggal hanya boleh dari 1 sampai 31" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Tanggal hanya boleh dari 1 sampai 31");
             continue;
         }
 
         if (*bulan < 1 || *bulan > 12)
         {
-            warna_merah();
-            cout << "Bulan hanya boleh dari 1 sampai 12" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Bulan hanya boleh dari 1 sampai 12");
             continue;
         }
 
         if (*tahun < 1)
         {
-            warna_merah();
-            cout << "Tahun tidak boleh kurang dari 1" << endl;
-            warna_bawaan();
+            UtilitasTerminal::tampilkan_error("Tahun tidak boleh kurang dari 1");
             continue;
         }
 
@@ -314,23 +316,23 @@ string input_banyak_baris()
 
 int main()
 {
-    warna_hijau();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Hijau);
     cout << "Dibuat oleh ";
-    warna_biru();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Biru);
     cout << "Levi Rizki Saputra ";
-    warna_kuning();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Kuning);
     cout << "(" << 123230127 << ")";
-    warna_bawaan();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Bawaan);
     cout << endl
          << endl;
 
-    tampilkan_heading("Form Penerbitan Postingan");
+    UtilitasTerminal::tampilkan_heading("Form Penerbitan Postingan");
 
     string id = input_id(PROMPT_ID);
 
     string judul = input_judul(PROMPT_JUDUL);
 
-    tampilkan_prompt(PROMPT_TAG);
+    UtilitasTerminal::tampilkan_prompt(PROMPT_TAG);
     string tags;
     getline(cin, tags);
 
@@ -339,39 +341,38 @@ int main()
     int tahun;
     input_tanggal(PROMPT_TANGGAL_TERBIT, &tanggal, &bulan, &tahun);
 
-    warna_kuning();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Kuning);
     cout << "Tulis Konten ";
-    warna_bawaan();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Bawaan);
     cout << "(Mendukung Banyak Baris. Akhiri dengan Baris Korong)" << endl;
 
     string konten = input_banyak_baris();
 
     cout << endl;
-    warna_hijau();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Hijau);
     cout << "Selamat postingan anda telah diterbitkan";
-    warna_bawaan();
+    UtilitasTerminal::tetapkan_warna(UtilitasTerminal::Bawaan);
     cout << endl
          << endl;
 
-    tampilkan_heading("Pratinjau Postingan");
+    UtilitasTerminal::tampilkan_heading("Pratinjau Postingan");
 
-    tampilkan_prompt(PROMPT_ID);
+    UtilitasTerminal::tampilkan_prompt(PROMPT_ID);
     cout << id << endl;
-
-    tampilkan_prompt(PROMPT_JUDUL);
+    UtilitasTerminal::tampilkan_prompt(PROMPT_JUDUL);
     cout << judul << endl;
 
-    tampilkan_prompt(PROMPT_JUDUL);
+    UtilitasTerminal::tampilkan_prompt(PROMPT_JUDUL);
     cout << tags << endl;
 
-    tampilkan_prompt(PROMPT_TANGGAL_TERBIT);
+    UtilitasTerminal::tampilkan_prompt(PROMPT_TANGGAL_TERBIT);
     cout << right << setfill('0')
          << setw(2) << tanggal << "/"
          << setw(2) << bulan << "/"
          << setw(4) << tahun << endl
          << setfill(' ') << left;
 
-    tampilkan_prompt("Konten");
+    UtilitasTerminal::tampilkan_prompt("Konten");
     cout << endl
          << konten;
 
