@@ -115,7 +115,7 @@ namespace UtilitasTerminal
         tetapkan_warna(Bawaan);
     }
 
-    void tampilkan_error(string error)
+    void tampilkanError(string error)
     {
         tetapkan_warna(Merah);
         cout << error << endl;
@@ -230,7 +230,7 @@ private:
     {
         if (str.length() == 0)
         {
-            UtilitasTerminal::tampilkan_error("Tidak boleh kosong");
+            UtilitasTerminal::tampilkanError("Tidak boleh kosong");
             return false;
         }
         return true;
@@ -241,7 +241,7 @@ private:
 
         if (str.length() != 1)
         {
-            UtilitasTerminal::tampilkan_error("Hanya boleh 1 karakter");
+            UtilitasTerminal::tampilkanError("Hanya boleh 1 karakter");
             return false;
         }
         return true;
@@ -254,7 +254,7 @@ private:
         {
             if (*it < 48 || *it > 57)
             {
-                UtilitasTerminal::tampilkan_error("Hanya boleh berisi bilangan bulat");
+                UtilitasTerminal::tampilkanError("Hanya boleh berisi bilangan bulat");
                 return false;
             }
         }
@@ -270,7 +270,7 @@ private:
         stream >> input_desimal_terakhir;
         if (!stream.eof())
         {
-            UtilitasTerminal::tampilkan_error("Hanya boleh berisi bilangan desimal");
+            UtilitasTerminal::tampilkanError("Hanya boleh berisi bilangan desimal");
             return false;
         }
         return true;
@@ -286,7 +286,7 @@ private:
     {
         if (str.length() != format_tanggal.length() || str.at(2) != '/' || str.at(5) != '/')
         {
-            UtilitasTerminal::tampilkan_error("Format tanggal tidak valid. Gunakan format " + format_tanggal);
+            UtilitasTerminal::tampilkanError("Format tanggal tidak valid. Gunakan format " + format_tanggal);
             return false;
         }
 
@@ -295,39 +295,39 @@ private:
         stream >> input_tanggal_terakhir;
         if (stream.get() != '/')
         {
-            UtilitasTerminal::tampilkan_error("Tanggal tidak sepenuhnya angka");
+            UtilitasTerminal::tampilkanError("Tanggal tidak sepenuhnya angka");
             return false;
         }
 
         stream >> input_bulan_terakhir;
         if (stream.get() != '/')
         {
-            UtilitasTerminal::tampilkan_error("Bulan tidak sepenuhnya angka");
+            UtilitasTerminal::tampilkanError("Bulan tidak sepenuhnya angka");
             return false;
         }
 
         stream >> input_tahun_terakhir;
         if (!stream.eof())
         {
-            UtilitasTerminal::tampilkan_error("Tahun tidak sepenuhnya angka");
+            UtilitasTerminal::tampilkanError("Tahun tidak sepenuhnya angka");
             return false;
         }
 
         if (input_tanggal_terakhir < 1 || input_tanggal_terakhir > 31)
         {
-            UtilitasTerminal::tampilkan_error("Tanggal hanya boleh dari 1 sampai 31");
+            UtilitasTerminal::tampilkanError("Tanggal hanya boleh dari 1 sampai 31");
             return false;
         }
 
         if (input_bulan_terakhir < 1 || input_bulan_terakhir > 12)
         {
-            UtilitasTerminal::tampilkan_error("Bulan hanya boleh dari 1 sampai 12");
+            UtilitasTerminal::tampilkanError("Bulan hanya boleh dari 1 sampai 12");
             return false;
         }
 
         if (input_tahun_terakhir < 1)
         {
-            UtilitasTerminal::tampilkan_error("Tahun tidak boleh kurang dari 1");
+            UtilitasTerminal::tampilkanError("Tahun tidak boleh kurang dari 1");
             return false;
         }
 
