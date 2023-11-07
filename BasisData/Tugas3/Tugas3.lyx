@@ -1,0 +1,1947 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align right
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nama
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Levi Rizki Saputra
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kelas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IF-D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+123230127
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tampilkan employee yang memiliki nama depan gerard dan memiliki job sebagai
+ Sales Rep
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT * FROM employees WHERE 
+\end_layout
+
+\begin_layout Plain Layout
+
+	firstName = 
+\begin_inset Quotes eld
+\end_inset
+
+gerard
+\begin_inset Quotes erd
+\end_inset
+
+ AND 
+\end_layout
+
+\begin_layout Plain Layout
+
+	jobTitle = 
+\begin_inset Quotes eld
+\end_inset
+
+Sales Rep
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=TeX,fontsize={\scriptsize}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
++----------------+-----------+-----------+-----------+--------------------------
+------+------------+-----------+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| employeeNumber | lastName  | firstName | extension | email           
+               | officeCode | reportsTo | jobTitle  |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+-----------+-----------+-----------+--------------------------
+------+------------+-----------+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|           1370 | Hernandez | Gerard    | x2028     | ghernande@classicmodelcar
+s.com | 4          |      1102 | Sales Rep |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+-----------+-----------+-----------+--------------------------
+------+------------+-----------+-----------+
+\end_layout
+
+\begin_layout Plain Layout
+
+1 row in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 1.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan order number, product code, jumlah order, order line number, beserta
+ total harganya diurutkan berdasarkan total harganya besar ke kecil
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Relasi antara orders dan orderdetails adalah one (orders) to many (orderdetails).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+	Base.orderNumber,
+\end_layout
+
+\begin_layout Plain Layout
+
+	Detail.productCode,
+\end_layout
+
+\begin_layout Plain Layout
+
+	Detail.quantityOrdered,
+\end_layout
+
+\begin_layout Plain Layout
+
+	Detail.orderLineNumber,
+\end_layout
+
+\begin_layout Plain Layout
+
+	Detail.priceEach * Detail.quantityOrdered AS totalPrice 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM orders Base 
+\end_layout
+
+\begin_layout Plain Layout
+
+	RIGHT JOIN orderdetails AS Detail 
+\end_layout
+
+\begin_layout Plain Layout
+
+		ON Detail.orderNumber = Base.orderNumber 
+\end_layout
+
+\begin_layout Plain Layout
+
+ORDER BY totalPrice DESC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++-------------+-------------+-----------------+-----------------+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| orderNumber | productCode | quantityOrdered | orderLineNumber | totalPrice
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+-------------+-----------------+-----------------+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10403 | S10_4698    |              66 |               9 |   11503.14
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10405 | S12_4675    |              97 |               5 |   11170.52
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10407 | S18_1749    |              76 |               2 |   10723.60
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10404 | S12_1099    |              64 |               3 |   10460.16
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10312 | S10_1949    |              48 |               3 |   10286.40
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10424 | S10_1949    |              50 |               6 |   10072.00
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10348 | S12_1108    |              48 |               8 |    9974.40
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10405 | S24_3856    |              76 |               3 |    9712.04
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10196 | S12_1108    |              47 |               5 |    9571.08
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10206 | S10_1949    |              47 |               6 |    9568.73
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10304 | S10_1949    |              47 |               6 |    9467.68
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10412 | S18_3232    |              60 |               9 |    9449.40
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10201 | S10_4698    |              49 |               4 |    9394.28
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10223 | S10_4698    |              49 |               3 |    9299.71
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10276 | S12_1099    |              50 |               3 |    9242.00
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10417 | S10_4698    |              56 |               4 |    9109.52
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10127 | S12_1108    |              46 |               2 |    8889.50
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10341 | S12_1099    |              45 |               2 |    8667.90
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10400 | S10_4757    |              64 |               9 |    8616.96
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10293 | S12_1108    |              46 |               8 |    8602.92
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10247 | S12_1108    |              44 |               2 |    8594.52
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10194 | S10_1949    |              42 |              11 |    8550.78
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10105 | S12_1108    |              41 |              15 |    8434.52
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10401 | S700_2466   |              85 |              10 |    8391.20
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10214 | S18_2795    |              50 |               1 |    8353.00
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10375 | S12_1099    |              45 |               7 |    8317.80
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10260 | S12_1108    |              46 |               5 |    8316.34
+ |
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Update deskripsi product dari tabel product yang product codenya diakhir
+ dengan angka 8.
+ (Text update nya dibebaskan)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT productCode, productName FROM products WHERE productCode LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+%8
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3-1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++-------------+---------------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| productCode | productName                           |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+---------------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| S10_1678    | 1969 Harley Davidson Ultimate Chopper |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S10_4698    | 2003 Harley-Davidson Eagle Drag Bike  |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S12_1108    | 2001 Ferrari Enzo                     |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S12_3148    | 1969 Corvair Monza                    |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_2238    | 1998 Chrysler Plymouth Prowler        |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_2248    | 1911 Ford Town Car                    |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_3278    | 1969 Dodge Super Bee                  |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_4668    | 1939 Cadillac Limousine               |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_1578    | 1997 BMW R 1100 S                     |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_1628    | 1966 Shelby Cobra 427 S/C             |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4048    | 1992 Porsche Cayenne Turbo Silver     |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4258    | 1936 Chrysler Airflow                 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4278    | 1900s Vintage Tri-Plane               |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S32_1268    | 1980's GM Manhattan Express           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S700_1138   | The Schooner Bluenose                 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S700_1938   | The Mayflower                         |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+---------------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+16 rows in set (0,00 sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE products SET 
+\end_layout
+
+\begin_layout Plain Layout
+
+  productName = IF(productName LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+19%
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Plain Layout
+
+                  
+\begin_inset Quotes eld
+\end_inset
+
+Barang antik nan Tua
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Plain Layout
+
+                  
+\begin_inset Quotes eld
+\end_inset
+
+Kemungkinan Barang Tidak Antik
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE productCode LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+%8
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 16 rows affected (0,01 sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+Rows matched: 16  Changed: 16  Warnings: 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3-2.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT productCode, productName FROM products WHERE productCode LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+%8
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++-------------+--------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| productCode | productName                    |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+--------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| S10_1678    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S10_4698    | Kemungkinan Barang Tidak Antik |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S12_1108    | Kemungkinan Barang Tidak Antik |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S12_3148    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_2238    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_2248    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_3278    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S18_4668    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_1578    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_1628    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4048    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4258    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S24_4278    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S32_1268    | Barang antik nan Tua           |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S700_1138   | Kemungkinan Barang Tidak Antik |
+\end_layout
+
+\begin_layout Plain Layout
+
+| S700_1938   | Kemungkinan Barang Tidak Antik |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+--------------------------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+16 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3-3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan nama employee dengan column Full Name yang diawali dengan huruf
+ v atau diakhiri dengan huruf i yang memiliki job sebagai Sales Rep (Gunakan
+ WHERE)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT CONCAT(firstName, 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Quotes erd
+\end_inset
+
+, lastName) AS `Full Name` 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM employees 
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE 
+\end_layout
+
+\begin_layout Plain Layout
+
+	(firstName LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+v%
+\begin_inset Quotes erd
+\end_inset
+
+ OR lastName LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+%i
+\begin_inset Quotes erd
+\end_inset
+
+) AND 
+\end_layout
+
+\begin_layout Plain Layout
+
+	jobTitle = 
+\begin_inset Quotes eld
+\end_inset
+
+Sales Rep
+\begin_inset Quotes erd
+\end_inset
+
+; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Full Name      |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Julie Firrelli |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mami Nishi     |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+2 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sama seperti no 4 tetapi gunakan IN
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT CONCAT(firstName, 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Quotes erd
+\end_inset
+
+, lastName) AS `Full Name`
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM employees
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE CONCAT(firstName, 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Quotes erd
+\end_inset
+
+, lastName) IN (
+\begin_inset Quotes eld
+\end_inset
+
+Julie Firrelli
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Mami Nishi
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Full Name      |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Julie Firrelli |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mami Nishi     |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+2 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan nama customer dan jumlah order as totalOrdered berdasarkan customer
+ id dengan ketentuan total jumlah order tersebut lebih dari 100
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT C.customerName, SUM(D.quantityOrdered) AS totalOrdered
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM customers C 
+\end_layout
+
+\begin_layout Plain Layout
+
+  RIGHT JOIN orders O 
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON O.customerNumber = C.customerNumber 
+\end_layout
+
+\begin_layout Plain Layout
+
+  RIGHT JOIN orderdetails D
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON O.orderNumber = D.orderNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY C.customerNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+  HAVING totalOrdered > 100;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++------------------------------------+--------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| customerName                       | totalOrdered |
+\end_layout
+
+\begin_layout Plain Layout
+
++------------------------------------+--------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Online Diecast Creations Co.
+       |         1248 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Blauer See Auto, Co.
+               |          811 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Vitachrome Inc.
+                    |          787 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Baane Mini Imports                 |         1082 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Euro+ Shopping Channel             |         9327 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Danish Wholesale Imports           |         1315 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Rovelli Gifts                      |         1650 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Land of Toys Inc.
+                  |         1631 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Cruz & Sons Co.
+                    |          961 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Motor Mint Distributors Inc.
+       |          730 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| AV Stores, Co.
+                     |         1778 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mini Wheels Co.
+                    |          692 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Volvo Model Replicas, Co           |          647 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mini Gifts Distributors Ltd.
+       |         6366 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| La Corne D'abondance, Co.
+          |          836 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Classic Legends Inc.
+               |          720 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Royale Belge                       |          278 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Dragon Souveniers, Ltd.
+            |         1524 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Enaco Distributors                 |          882 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Salzburg Collectables              |         1442 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Australian Collectors, Co.
+         |         1926 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Reims Collectables                 |         1433 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Marseille Mini Autos               |          804 |
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan nomor order, nama produk yang dibeli, jumlah order as quantity
+ ordered, total pendapatan product keseluruhan as pendapatan product, serta
+ tanggal order dengan ketentuan total harga pembeliannya diantara 500000
+ dan 800000 berdasarkan nomor order
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  O.orderNumber, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  P.productName, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  D.quantityOrdered as `quantity ordered`,
+\end_layout
+
+\begin_layout Plain Layout
+
+  (D.priceEach - P.buyPrice) * D.quantityOrdered * 1000 as `pendapatan product`,
+\end_layout
+
+\begin_layout Plain Layout
+
+  O.orderDate 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM orders O
+\end_layout
+
+\begin_layout Plain Layout
+
+  JOIN orderdetails D
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON O.orderNumber = D.orderNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+  JOIN products P
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON D.productCode = P.productCode
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE (D.quantityOrdered * P.buyPrice * 1000) BETWEEN 500000 AND 800000;
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=TeX,fontsize={\footnotesize}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
++-------------+---------------------------------------------+------------------+
+--------------------+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| orderNumber | productName                                 | quantity ordered
+ | pendapatan product | orderDate  |
+\end_layout
+
+\begin_layout Plain Layout
+
++-------------+---------------------------------------------+------------------+
+--------------------+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10103 | 1926 Ford Fire Engine                       |          
+     22 |          735240.00 | 2003-01-29 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10104 | 1958 Chevy Corvette Limited Edition         |          
+     44 |          638000.00 | 2003-01-31 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10107 | 1936 Harley Davidson El Knucklehead         |          
+     29 |          825630.00 | 2003-02-24 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10108 | 1982 Ducati 996 R                           |          
+     27 |          325890.00 | 2003-03-03 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10113 | 1996 Peterbilt 379 Stake Bed with Outrigger |          
+     23 |          579830.00 | 2003-03-26 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10114 | 1954 Greyhound Scenicruiser                 |          
+     28 |          499800.00 | 2003-04-01 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10116 | 1950's Chicago Surface Lines Streetcar      |          
+     27 |          906120.00 | 2003-04-11 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10117 | 1962 City of Detroit Streetcar              |          
+     21 |          381360.00 | 2003-04-16 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10119 | 1937 Horch 930V Limousine                   |          
+     20 |          736400.00 | 2003-04-28 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10122 | 1982 Lamborghini Diablo                     |          
+     39 |          721500.00 | 2003-05-08 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10122 | 1982 Ducati 996 R                           |          
+     31 |          299150.00 | 2003-05-08 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10124 | 1957 Ford Thunderbird                       |          
+     23 |          737610.00 | 2003-05-21 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10127 | 1970 Dodge Coronet                          |          
+     20 |          369800.00 | 2003-06-03 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10127 | 1958 Chevy Corvette Limited Edition         |          
+     39 |          717210.00 | 2003-06-03 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10127 | 1950's Chicago Surface Lines Streetcar      |          
+     29 |          991220.00 | 2003-06-03 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10131 | 1937 Horch 930V Limousine                   |          
+     29 |          762700.00 | 2003-06-16 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10131 | Boeing X-32A JSF                            |          
+     21 |          156450.00 | 2003-06-16 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10133 | 1930 Buick Marquette Phaeton                |          
+     27 |          270810.00 | 2003-06-27 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10134 | 1936 Harley Davidson El Knucklehead         |          
+     30 |          817500.00 | 2003-07-01 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10135 | 1970 Plymouth Hemi Cuda                     |          
+     24 |          976800.00 | 2003-07-02 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10135 | 1961 Chevrolet Impala                       |          
+     23 |         1022810.00 | 2003-07-02 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10135 | 1982 Ducati 996 R                           |          
+     33 |          477840.00 | 2003-07-02 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10137 | Barang antik nan Tua                        |          
+     26 |          287820.00 | 2003-07-10 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10138 | Barang antik nan Tua                        |          
+     22 |          399520.00 | 2003-07-07 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10138 | 1957 Ford Thunderbird                       |          
+     23 |          704950.00 | 2003-07-07 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10138 | 1938 Cadillac V-16 Presidential Limousine   |          
+     33 |          591360.00 | 2003-07-07 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10138 | 1936 Mercedes Benz 500k Roadster            |          
+     29 |          321030.00 | 2003-07-07 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10139 | 1934 Ford V8 Coupe                          |          
+     20 |          362400.00 | 2003-07-16 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10140 | Barang antik nan Tua                        |          
+     29 |          496190.00 | 2003-07-24 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10141 | 1970 Dodge Coronet                          |          
+     20 |          369800.00 | 2003-08-01 |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10141 | 1954 Greyhound Scenicruiser                 |          
+     24 |          649200.00 | 2003-08-01 |
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 7.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Berikan 1 perintah dan code dengan menerapkan materi sql lanjutan inner
+ join, dan menggunakan materi perintah mysql.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Perintah untuk menemukan customer yang telah melakukan transaksi di toko
+ lebih besar dari 40.000.000 dan tinggal di 
+\begin_inset Quotes eld
+\end_inset
+
+San Fransisco
+\begin_inset Quotes erd
+\end_inset
+
+ atau 
+\begin_inset Quotes eld
+\end_inset
+
+Barcelone
+\begin_inset Quotes erd
+\end_inset
+
+ atau 
+\begin_inset Quotes eld
+\end_inset
+
+Boston
+\begin_inset Quotes erd
+\end_inset
+
+ dan namanya terdapat huruf 
+\begin_inset Quotes eld
+\end_inset
+
+m
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  C.customerNumber, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  C.customerName, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  C.phone,
+\end_layout
+
+\begin_layout Plain Layout
+
+  SUM(P.amount) * 1000 AS totalSpent
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM customers C
+\end_layout
+
+\begin_layout Plain Layout
+
+  JOIN payments P 
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON P.customerNumber = C.customerNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE
+\end_layout
+
+\begin_layout Plain Layout
+
+  C.city IN (
+\begin_inset Quotes eld
+\end_inset
+
+San Francisco
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Barcelona
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Boston
+\begin_inset Quotes erd
+\end_inset
+
+) AND
+\end_layout
+
+\begin_layout Plain Layout
+
+  C.customerName LIKE 
+\begin_inset Quotes eld
+\end_inset
+
+%m%
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY C.customerNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+	HAVING totalSpent > 40000000;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++----------------+-----------------+------------+-------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| customerNumber | customerName    | phone      | totalSpent  |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+-----------------+------------+-------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+|            129 | Mini Wheels Co.
+ | 6505555787 | 66710560.00 |
+\end_layout
+
+\begin_layout Plain Layout
+
++----------------+-----------------+------------+-------------+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
