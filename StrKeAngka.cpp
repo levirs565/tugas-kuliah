@@ -17,20 +17,23 @@ string intKeStr(int angka)
     char str[digitCount + 1] = {};
     str[digitCount] = '\0';
 
+    int currentDivider = 1;
+
+    for (int power = 1; power < digitCount; power++)
+    {
+        currentDivider *= 10;
+    }
+
     int tersisa = angka;
     for (int i = 0; i < digitCount; i++)
     {
-        int divider = 1;
         const int powerFactor = digitCount - i;
-        for (int j = 1; j < powerFactor; j++)
-        {
-            divider *= 10;
-        }
-
-        int currentDigit = (int)floor(tersisa / divider);
+        int currentDigit = (int)floor(tersisa / currentDivider);
         str[i] = intKeChar(currentDigit);
 
-        tersisa = tersisa - currentDigit * divider;
+        tersisa = tersisa - currentDigit * currentDivider;
+
+        currentDivider /= 10;
     }
 
     return string(str);
@@ -39,16 +42,15 @@ string intKeStr(int angka)
 int strKeInt(string str)
 {
     int result = 0;
+    int tenFactor = 1;
     for (int i = str.length() - 1; i >= 0; i--)
     {
-        const int tenFactor = str.length() - i;
         const char currentChar = str.at(i);
         if (currentChar < '0' || currentChar > '9')
-            throw invalid_argument("ditemukan karakter bukan angka");
-        int currentNumber = currentChar - '0';
-        for (int j = 1; j < tenFactor; j++)
-            currentNumber *= 10;
-        result += currentNumber;
+            throw invalid_argument(string("ditemukan karakter bukan angka yaitu ") + currentChar);
+        int currentDigit = currentChar - '0';
+        result += currentDigit * tenFactor;
+        tenFactor *= 10;
     }
     return result;
 }
