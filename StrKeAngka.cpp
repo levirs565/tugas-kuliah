@@ -74,9 +74,23 @@ char intKeChar(int angka)
 
 string intKeStr(int angka)
 {
-    int digitCount = (int)floor(log10(angka) + 1);
-    char str[digitCount + 1] = {};
+    int tersisa = angka;
+    int shift = 0;
+    bool negatif = false;
+
+    if (angka < 0)
+    {
+        tersisa *= -1;
+        shift = 1;
+        negatif = true;
+    }
+
+    int digitCount = (int)floor(log10(tersisa) + 1);
+    char str[digitCount + shift + 1] = {};
     str[digitCount] = '\0';
+
+    if (negatif)
+        str[0] = '-';
 
     int currentDivider = 1;
 
@@ -85,11 +99,10 @@ string intKeStr(int angka)
         currentDivider *= 10;
     }
 
-    int tersisa = angka;
     for (int i = 0; i < digitCount; i++)
     {
         int currentDigit = (int)floor(tersisa / currentDivider);
-        str[i] = intKeChar(currentDigit);
+        str[i + shift] = intKeChar(currentDigit);
 
         tersisa = tersisa - currentDigit * currentDivider;
 
@@ -106,6 +119,11 @@ int strKeInt(string str)
     for (int i = str.length() - 1; i >= 0; i--)
     {
         const char currentChar = str.at(i);
+        if (i == 0 && currentChar == '-')
+        {
+            result *= -1;
+            continue;
+        }
         if (currentChar < '0' || currentChar > '9')
             throw invalid_argument(string("ditemukan karakter bukan angka yaitu ") + currentChar);
         int currentDigit = currentChar - '0';
