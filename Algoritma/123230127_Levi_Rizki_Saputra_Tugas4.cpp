@@ -4,6 +4,7 @@
 #include <vector>
 #include <limits>
 #include <ctime>
+#include <cmath>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -24,6 +25,22 @@ namespace UtilitasTerminal
       Windows tidak menundkung ANSI escape
       Dibutuhkan fungsi yang berbeda untuk mewarnai stdout
   */
+
+#ifdef _WIN32
+  HANDLE hStdOut;
+  HANDLE hStdIn;
+#else
+  const char ESC = '\x1b';
+  const char CSI[] = {ESC, '[', '\0'};
+#endif
+
+  void aktivasi()
+  {
+#ifdef _WIN32
+    hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    hStdIn = GetStdHandle(STD_INPUT_HANDLE);
+#endif
+  }
 
   enum Warna
   {
@@ -63,7 +80,7 @@ namespace UtilitasTerminal
       return;
       break;
     }
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), kodeWarna);
+    SetConsoleTextAttribute(hStdOut, kodeWarna);
 #else
     string kodeWarna;
     switch (warna)
@@ -90,7 +107,7 @@ namespace UtilitasTerminal
       return;
       break;
     }
-    cout << "\033[" << kodeWarna << "m";
+    cout << CSI << kodeWarna << "m";
 #endif
   }
 
@@ -98,7 +115,7 @@ namespace UtilitasTerminal
   {
 #ifdef _WIN32
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    GetConsoleScreenBufferInfo(hStdOut, &csbi);
     return csbi.srWindow.Right - csbi.srWindow.Left + 1;
 #else
     winsize w;
@@ -149,9 +166,13 @@ namespace UtilitasTerminal
 #ifndef _WIN32
   termios lastTermiosAttr;
 #endif
+  bool inputNavigasiAktif = false;
 
   void aktifkanInputNavigasi()
   {
+    if (inputNavigasiAktif)
+      return;
+
 #ifndef _WIN32
     termios attr;
     tcgetattr(STDIN_FILENO, &attr);
@@ -159,14 +180,20 @@ namespace UtilitasTerminal
     attr.c_lflag &= ~ICANON & ~ECHO;
     tcsetattr(STDIN_FILENO, TCSANOW, &attr);
 #endif
+
+    inputNavigasiAktif = true;
   }
 
   void nonaktifkanInputNavigasi()
   {
+    if (!inputNavigasiAktif)
+      return;
+
 #ifndef _WIN32
-    termios attr;
     tcsetattr(STDIN_FILENO, TCSANOW, &lastTermiosAttr);
 #endif
+
+    inputNavigasiAktif = false;
   }
 
   Navigasi inputNavigasi()
@@ -175,10 +202,10 @@ namespace UtilitasTerminal
     char input;
 
     cin >> noskipws >> input >> skipws;
-    if (input == '\x1b')
+    if (input == CSI[0])
     {
       cin >> input;
-      if (input == '[')
+      if (input == CSI[1])
       {
         cin >> input;
         if (input == 'A')
@@ -202,8 +229,6 @@ namespace UtilitasTerminal
       return TidakDikenal;
     }
 #else
-    HANDLE hStdIn = GetStdHandle(STD_INPUT_HANDLE);
-
     DWORD events = 0;
     DWORD eventRead = 0;
 
@@ -234,57 +259,91 @@ namespace UtilitasTerminal
 #endif
   }
 
-#ifdef _WIN32
-  COORD lastCursorPos;
-#endif
-
-  void simpanPosisiCursor()
+  void hapusBarisAtas(int jumlah)
   {
 #ifdef _WIN32
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     GetConsoleScreenBufferInfo(hStdOut, &csbi);
-    lastCursorPos = csbi.dwCursorPosition;
+
+    COORD cursorPos;
+    cursorPos.X = 0;
+    cursorPos.Y = csbi.dwCursorPosition.Y - jumlah;
+
+    DWORD length = jumlah * csbi.dwSize.X;
+    DWORD writtenLength;
+
+    FillConsoleOutputCharacter(hStdOut, ' ', length, cursorPos, &writtenLength);
+    SetConsoleCursorPosition(hStdOut, cursorPos);
 #else
-    cout << "\x1b[s";
+    cout << CSI << jumlah << "A";
+    cout << CSI << "0J";
 #endif
   }
 
-  void kembalikanPosisiCursorDanHapus()
-  {
+  bool cursorDisembunyikan = false;
+
 #ifdef _WIN32
-    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(hStdOut, &csbi);
-    DWORD length = csbi.dwSize.X * csbi.dwSize.Y - lastCursorPos.X * lastCursorPos.Y;
-    DWORD writtenLength = 0;
-    FillConsoleOutputCharacter(hStdOut, ' ', length, lastCursorPos, &writtenLength);
-    SetConsoleCursorPosition(hStdOut, lastCursorPos);
-#else
-    cout << "\x1b[u";
-    cout << "\x1b[0J";
+  void aturCursorDitampilkan(bool tampilkan)
+  {
+    CONSOLE_CURSOR_INFO csi;
+    GetConsoleCursorInfo(hStdOut, &csi);
+    csi.bVisible = tampilkan;
+    SetConsoleCursorInfo(hStdOut, &csi);
+  }
 #endif
+
+  void sembunyikanCursor()
+  {
+    if (cursorDisembunyikan)
+      return;
+
+#ifdef _WIN32
+    aturCursorDitampilkan(false);
+#else
+    cout << CSI << "?25l";
+#endif
+
+    cursorDisembunyikan = true;
   }
 
-  int pemilihInteraktif(vector<string> pilihan)
+  void tampilkanCursor()
   {
+    if (!cursorDisembunyikan)
+      return;
+
+#ifdef _WIN32
+    aturCursorDitampilkan(true);
+#else
+    cout << CSI << "?25h";
+#endif
+
+    cursorDisembunyikan = false;
+  }
+
+  int pemilihInteraktif(const vector<string> &pilihan)
+  {
+    sembunyikanCursor();
     aktifkanInputNavigasi();
     Navigasi nav;
-    bool redraw = false;
+    int barisTertulis = 0;
     string prompt = "(Tombol Panah/Atas Untuk Berpindah dan Enter untuk Memilih)";
-    int currentIndex = 0;
+    size_t currentIndex = 0;
+
+    string markerTerpilih = " (Terpilih)";
 
     cout << prompt << endl;
     do
     {
-      if (redraw)
+      if (barisTertulis > 0)
       {
-        kembalikanPosisiCursorDanHapus();
+        hapusBarisAtas(barisTertulis);
+        barisTertulis = 0;
       }
-      simpanPosisiCursor();
 
-      for (int i = 0; i < pilihan.size(); i++)
+      int jumlahKolom = UtilitasTerminal::jumlahKolom();
+      for (size_t i = 0; i < pilihan.size(); i++)
       {
+        int karakterTertulis = 0;
         if (i == currentIndex)
         {
           UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
@@ -292,16 +351,24 @@ namespace UtilitasTerminal
         }
         else
           cout << "  ";
-        cout << pilihan.at(i);
+        karakterTertulis += 2;
+
+        string pilihanSekarang = pilihan.at(i);
+
+        cout << pilihanSekarang;
+        karakterTertulis += pilihanSekarang.length();
+
         if (i == currentIndex)
         {
-          cout << " (Terpilih)";
+          cout << markerTerpilih;
+          karakterTertulis += markerTerpilih.length();
           UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
         }
         cout << endl;
+
+        barisTertulis += ceil((float)karakterTertulis / (float)jumlahKolom);
       }
 
-      redraw = true;
       nav = inputNavigasi();
 
       if (nav == Atas)
@@ -312,6 +379,7 @@ namespace UtilitasTerminal
     } while (nav != Enter);
 
     nonaktifkanInputNavigasi();
+    tampilkanCursor();
     return currentIndex;
   }
 
@@ -322,24 +390,28 @@ namespace UtilitasTerminal
     UtilitasTerminal::tetapkanWarna(Bawaan);
   }
 
-  int columnBorder(bool leftMargin, bool rightMargin)
+  void columnBorder(bool leftMargin, bool rightMargin)
   {
-    int result = 0;
     UtilitasTerminal::tetapkanWarna(Kuning);
     if (leftMargin)
     {
       cout << " ";
-      result++;
     }
     cout << "|";
-    result++;
     if (rightMargin)
     {
       cout << " ";
-      result++;
     }
     UtilitasTerminal::tetapkanWarna(Bawaan);
-    return result;
+  }
+
+  void column(string isi, int panjang, bool header)
+  {
+    tetapkanWarna(header ? Biru : Bawaan);
+    cout << setfill(' ');
+    cout << setw(panjang) << isi;
+    if (header)
+      tetapkanWarna(Bawaan);
   }
 }
 
@@ -363,13 +435,13 @@ public:
     return Tanggal(dataWaktu->tm_mday, dataWaktu->tm_mon + 1, dataWaktu->tm_year + 1900);
   }
 
-  static int jarakHari(Tanggal dari, Tanggal ke)
+  static int jarakHari(const Tanggal dari, const Tanggal ke)
   {
     time_t jarakDetik = ke.keDetik() - dari.keDetik();
     return jarakDetik / 60 / 60 / 24;
   }
 
-  time_t keDetik()
+  time_t keDetik() const
   {
     tm dataWaktu;
     dataWaktu.tm_year = mTahun - 1900;
@@ -382,7 +454,7 @@ public:
     return mktime(&dataWaktu);
   }
 
-  string toString()
+  string toString() const
   {
     stringstream stream;
     stream << right << setfill('0');
@@ -392,7 +464,7 @@ public:
     return stream.str();
   }
 
-  int getTahun()
+  int getTahun() const
   {
     return this->mTahun;
   }
@@ -555,9 +627,9 @@ private:
       {
         UtilitasTerminal::tampilkanError("Bulan hanya boleh dari 1 sampai 12");
       }
-      else if (tahun < 1)
+      else if (tahun < 1970 || tahun > 2037)
       {
-        UtilitasTerminal::tampilkanError("Tahun tidak boleh kurang dari 1");
+        UtilitasTerminal::tampilkanError("Tahun hanya boleh dari 1970 sampai 2037");
       }
       else
       {
@@ -691,21 +763,26 @@ bool login()
 
   for (int i = 1; i <= 3; i++)
   {
-    UtilitasTerminal::simpanPosisiCursor();
+    int barisTertulis = 0;
     if (i != 1)
     {
       UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Merah);
       cout << "Password salah" << endl;
+      barisTertulis++;
       UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
       cout << "Percobaan ke " << i << endl;
+      barisTertulis++;
       cout << endl;
+      barisTertulis++;
     }
     UtilitasTerminal::tampilkanPrompt("Username");
     getline(cin, username);
+    barisTertulis++;
     UtilitasTerminal::tampilkanPrompt("Password");
     getline(cin, password);
+    barisTertulis++;
 
-    UtilitasTerminal::kembalikanPosisiCursorDanHapus();
+    UtilitasTerminal::hapusBarisAtas(barisTertulis);
     if (username == "admin" && password == "admin")
     {
       success = true;
@@ -783,31 +860,34 @@ void tampilkanDaftarPostingan(vector<Postingan> daftar)
     grid.push_back(currentRow);
   }
 
-  int panjangKolomId = 0;
-
-  for (vector<vector<string> >::iterator it = grid.begin(); it != grid.end(); it++)
-  {
-    int panjangId = it->at(0).length();
-    if (panjangId > panjangKolomId)
-      panjangKolomId = panjangId;
-  }
-
+  const int panjangKolomId = 15;
   const int kolomMaks = UtilitasTerminal::jumlahKolom();
+  const int panjangKolomJudul = kolomMaks - 7 - panjangKolomId;
   UtilitasTerminal::lineBorder();
   for (vector<vector<string> >::iterator it = grid.begin(); it != grid.end(); it++)
   {
+    stringstream idstream(it->at(0));
+    stringstream judulstream(it->at(1));
+
+    // | - | - |
+
+    char idOut[panjangKolomId + 1];
+    char judulOut[panjangKolomJudul + 1];
     bool isHeader = it == grid.begin();
-    int writtenCount = 0;
-    writtenCount += UtilitasTerminal::columnBorder(false, true);
-    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
-    cout << setfill(' ');
-    cout << setw(panjangKolomId) << it->at(0);
-    writtenCount += panjangKolomId;
-    writtenCount += UtilitasTerminal::columnBorder(true, true);
-    UtilitasTerminal::tetapkanWarna(isHeader ? UtilitasTerminal::Biru : UtilitasTerminal::Bawaan);
-    cout << setfill(' ');
-    cout << setw(kolomMaks - writtenCount - 1) << it->at(1);
-    UtilitasTerminal::columnBorder(false, false);
+
+    do
+    {
+      idstream.get(idOut, panjangKolomId + 1);
+      judulstream.get(judulOut, panjangKolomJudul + 1);
+
+      UtilitasTerminal::columnBorder(false, true);
+      UtilitasTerminal::column(idOut, panjangKolomId, true);
+      UtilitasTerminal::columnBorder(true, true);
+      UtilitasTerminal::column(judulOut, panjangKolomJudul, isHeader);
+      UtilitasTerminal::columnBorder(true, false);
+
+      cout << endl;
+    } while (!idstream.eof() || !judulstream.eof());
     UtilitasTerminal::lineBorder();
   }
 
@@ -817,7 +897,7 @@ void tampilkanDaftarPostingan(vector<Postingan> daftar)
 class LihatPostingan
 {
 private:
-  Postingan &mPostingan;
+  const Postingan &mPostingan;
 
   static unsigned int hitungJumlahKata(string str)
   {
@@ -839,7 +919,7 @@ private:
   }
 
 public:
-  LihatPostingan(Postingan &postingan) : mPostingan(postingan)
+  LihatPostingan(const Postingan &postingan) : mPostingan(postingan)
   {
   }
 
@@ -900,8 +980,35 @@ public:
   }
 };
 
+int pilihPostingan(const vector<Postingan> &daftar)
+{
+  UtilitasTerminal::tampilkanHeading("Pilih Postingan");
+  vector<string> judulPostingan;
+
+  for (vector<Postingan>::const_iterator it = daftar.begin(); it != daftar.end(); it++)
+  {
+    judulPostingan.push_back(it->judul);
+  }
+
+  return UtilitasTerminal::pemilihInteraktif(judulPostingan);
+}
+
+bool cekDaftarPostingan(const vector<Postingan> &daftar)
+{
+  if (daftar.size() == 0)
+  {
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Merah);
+    cout << endl;
+    cout << "Daftar postingan kosong" << endl;
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+    return false;
+  }
+  return true;
+}
+
 int main()
 {
+  UtilitasTerminal::aktivasi();
 
   UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
   cout << "Dibuat oleh ";
@@ -922,6 +1029,7 @@ int main()
   daftarPilihan.push_back("Lihat Daftar Postingan");
   daftarPilihan.push_back("Lihat Detail Postingan");
   daftarPilihan.push_back("Tambah Postingan");
+  daftarPilihan.push_back("Hapus Postingan");
   daftarPilihan.push_back("Logout");
 
   int pilihan;
@@ -932,19 +1040,15 @@ int main()
 
     if (pilihan == 0)
     {
+      if (!cekDaftarPostingan(daftarPostingan))
+        continue;
       tampilkanDaftarPostingan(daftarPostingan);
     }
     else if (pilihan == 1)
     {
-      UtilitasTerminal::tampilkanHeading("Pilih Postingan");
-      vector<string> pilihanPostingan;
-
-      for (vector<Postingan>::iterator it = daftarPostingan.begin(); it != daftarPostingan.end(); it++)
-      {
-        pilihanPostingan.push_back(it->judul);
-      }
-
-      Postingan postinganTerpilih = daftarPostingan.at(UtilitasTerminal::pemilihInteraktif(pilihanPostingan));
+      if (!cekDaftarPostingan(daftarPostingan))
+        continue;
+      Postingan &postinganTerpilih = daftarPostingan.at(pilihPostingan(daftarPostingan));
       LihatPostingan form(postinganTerpilih);
       form.run();
     }
@@ -954,7 +1058,14 @@ int main()
       form.run();
       daftarPostingan.push_back(form.postingan);
     }
-  } while (pilihan != 3);
+    else if (pilihan == 3)
+    {
+      if (!cekDaftarPostingan(daftarPostingan))
+        continue;
+      int index = pilihPostingan(daftarPostingan);
+      daftarPostingan.erase(daftarPostingan.begin() + index);
+    }
+  } while (pilihan != 4);
 
   return 0;
 }

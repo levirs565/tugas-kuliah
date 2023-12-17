@@ -83,6 +83,123 @@
 \begin_body
 
 \begin_layout Standard
+\align right
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nama
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Levi Rizki Saputra
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+123230127
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kelas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Create Database:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename CreateDatabase.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Query:
 \end_layout
 
@@ -94,7 +211,7 @@ status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE buku(
+CREATE TABLE Buku(
 \end_layout
 
 \begin_layout Plain Layout
@@ -124,12 +241,31 @@ Kode_penerbit CHAR(2) NOT NULL,
 
 \begin_layout Plain Layout
 
-Harga INT NOT NULL 
+Harga_Sebulan INT NOT NULL 
 \end_layout
 
 \begin_layout Plain Layout
 
 );
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 0 rows affected (0,02 sec) 
 \end_layout
 
 \end_inset
@@ -149,7 +285,7 @@ status open
 
 \begin_layout Plain Layout
 
-DESC buku;
+DESC Buku;
 \end_layout
 
 \end_inset
@@ -158,6 +294,76 @@ DESC buku;
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Field         | Type     | Null | Key | Default | Extra |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Kode_buku     | char(4)  | NO   | PRI | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Judul         | char(20) | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Pengarang     | char(15) | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Jml_buku      | int      | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Kode_penerbit | char(2)  | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Harga_Sebulan | int      | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+6 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename CreateBuku.png
 	scale 50
@@ -203,6 +409,25 @@ Nm_penerbit CHAR(15) NOT NULL
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 0 rows affected (0,04 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Query:
 \end_layout
 
@@ -223,6 +448,56 @@ DESC Penerbit;
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Field         | Type     | Null | Key | Default | Extra |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Kode_penerbit | char(2)  | NO   | PRI | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Nm_penerbit   | char(15) | NO   |     | NULL    |       |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+----------+------+-----+---------+-------+
+\end_layout
+
+\begin_layout Plain Layout
+
+2 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename CreatePenerbit.png
 	scale 50
@@ -288,6 +563,25 @@ Tgl_kembali DATETIME
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 0 rows affected (0,03 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Query:
 \end_layout
 
@@ -300,6 +594,30 @@ status open
 \begin_layout Plain Layout
 
 ALTER TABLE Pinjam RENAME COLUMN Tlg_hrs_kembali TO Tgl_hrs_kembali; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 0 rows affected (0,04 sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+Records: 0 Duplicates: 0 Warnings: 0
 \end_layout
 
 \end_inset
@@ -328,6 +646,76 @@ DESC Pinjam;
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++-----------------+----------+------+-----+---------+----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Field           | Type     | Null | Key | Default | Extra          |
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------------+----------+------+-----+---------+----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| ID_Peminjaman   | int      | NO   | PRI | NULL    | auto_increment |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Tgl_Pinjam      | datetime | NO   |     | NULL    |                |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mhs_no_induk    | char(9)  | NO   |     | NULL    |                |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Buku_kode_buku  | char(4)  | NO   |     | NULL    |                |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Tgl_hrs_kembali | datetime | NO   |     | NULL    |                |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Tgl_kembali     | datetime | YES  |     | NULL    |                |
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------------+----------+------+-----+---------+----------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+6 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename CreatePinjam.png
 	scale 50
@@ -388,6 +776,30 @@ INSERT INTO Penerbit(Kode_penerbit, Nm_penerbit) VALUES
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 6 rows affected (0,01 sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+Records: 6 Duplicates: 0 Warnings: 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Query:
 \end_layout
 
@@ -400,6 +812,30 @@ status open
 \begin_layout Plain Layout
 
 UPDATE Penerbit SET Nm_penerbit = "Erlangga" WHERE Kode_penerbit = "04";
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Query OK, 1 row affected (0,00 sec)
+\end_layout
+
+\begin_layout Plain Layout
+
+Rows matched: 1 Changed: 1 Warnings: 0
 \end_layout
 
 \end_inset
@@ -428,6 +864,76 @@ SELECT * FROM Penerbit;
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
++---------------+-------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| Kode_penerbit | Nm_penerbit |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+-------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| 01            | Informatika |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 02            | Andi        |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 03            | Gava Media  |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 04            | Erlangga    |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 05            | ITB         |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 06            | Mizan       |
+\end_layout
+
+\begin_layout Plain Layout
+
++---------------+-------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+6 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename InsertPenerbit.png
 	scale 50
@@ -449,46 +955,55 @@ status open
 
 \begin_layout Plain Layout
 
-INSERT INTO buku(Kode_buku, Judul, Pengarang, Jml_buku, Kode_penerbit, Harga)
- VALUES 
+INSERT INTO Buku(Kode_buku, Judul, Pengarang, Jml_buku, Kode_penerbit, Harga_Seb
+ulan) VALUES 
 \end_layout
 
 \begin_layout Plain Layout
 
 ("0001", "Kalkulus E.
  9 J.
- 1", "Purcell", 3, "04", 350000),
+ 1", "Purcell", 3, "04", 35000),
 \end_layout
 
 \begin_layout Plain Layout
 
-("0002", "Matematika Diskrit", "Rinaldi Munir", 7, "02", 125000),
+("0002", "Matematika Diskrit", "Rinaldi Munir", 7, "02", 12500),
 \end_layout
 
 \begin_layout Plain Layout
 
 ("0003", "Teori Aplikasi C++", "R.H.
- Sianipar", 2, "01", 175000), ("0004", "Delphi Accounting", "G.H.
- Away", 6, "01", 160000),
+ Sianipar", 2, "01", 17500),
+\end_layout
+
+\begin_layout Plain Layout
+
+("0004", "Delphi Accounting", "G.H.
+ Away", 6, "01", 16000),
 \end_layout
 
 \begin_layout Plain Layout
 
 ("0005", "Delphi Firebird", "G.H.
- Away", 3, "01", 150000),
+ Away", 3, "01", 15000),
 \end_layout
 
 \begin_layout Plain Layout
 
 ("0006", "Perpustakaan PHP", "B.
- Nugroho", 5, "03", 110000),
+ Nugroho", 5, "03", 11000),
 \end_layout
 
 \begin_layout Plain Layout
 
-("0007", "Konsep Teknologi", "Purwasasmita", 10, "05", 45000), ("0008",
- "Meditation", "M.
- Aurelius", 20, "06", 90000);
+("0007", "Konsep Teknologi", "Purwasasmita", 10, "05", 4500), 
+\end_layout
+
+\begin_layout Plain Layout
+
+("0008", "Meditation", "M.
+ Aurelius", 20, "06", 9000);
 \end_layout
 
 \end_inset
@@ -508,12 +1023,12 @@ status open
 
 \begin_layout Plain Layout
 
-Query OK, 8 rows affected (0,00 sec)
+Query OK, 8 rows affected (0,01 sec)
 \end_layout
 
 \begin_layout Plain Layout
 
-Records: 8 Duplicates: 0 Warnings: 0
+Records: 8  Duplicates: 0  Warnings: 0
 \end_layout
 
 \end_inset
@@ -527,11 +1042,13 @@ Query:
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
 \begin_layout Plain Layout
 
+SELECT * FROM Buku;
 \end_layout
 
 \end_inset
@@ -540,6 +1057,93 @@ status open
 \end_layout
 
 \begin_layout Standard
+Hasil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+| Kode_buku | Judul              | Pengarang     | Jml_buku | Kode_penerbit
+ | Harga_Sebulan |
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------+--------------------+---------------+----------+---------------+---
+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0001      | Kalkulus E.
+ 9 J.
+ 1 | Purcell       |        3 | 04            |         35000 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0002      | Matematika Diskrit | Rinaldi Munir |        7 | 02       
+     |         12500 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0003      | Teori Aplikasi C++ | R.H.
+ Sianipar |        2 | 01            |         17500 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0004      | Delphi Accounting  | G.H.
+ Away     |        6 | 01            |         16000 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0005      | Delphi Firebird    | G.H.
+ Away     |        3 | 01            |         15000 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0006      | Perpustakaan PHP   | B.
+ Nugroho    |        5 | 03            |         11000 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0007      | Konsep Teknologi   | Purwasasmita  |       10 | 05       
+     |          4500 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| 0008      | Meditation         | M.
+ Aurelius   |       20 | 06            |          9000 |
+\end_layout
+
+\begin_layout Plain Layout
+
++-----------+--------------------+---------------+----------+---------------+---
+------------+
+\end_layout
+
+\begin_layout Plain Layout
+
+8 rows in set (0,00 sec)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename InsertBuku.png
 	scale 50
@@ -567,47 +1171,47 @@ INSERT INTO Pinjam(Tgl_Pinjam, Mhs_no_induk, Buku_kode_buku, Tgl_hrs_kembali,
 
 \begin_layout Plain Layout
 
-("2023-07-14", "123230214", "0006", "2023-07-28", "2023-07-28"),
+("2023-06-03", "123230158", "0008", "2023-07-03", "2023-07-01"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-07-23", "123230134", "0002", "2023-07-30", "2023-07-26"),
+("2023-06-17", "123230121", "0004", "2023-07-17", "2023-07-15"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-07-24", "123230128", "0007", "2023-07-31", "2023-07-28"),
+("2023-06-24", "123230127", "0001", "2023-07-24", "2023-07-23"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-01", "123230001", "0005", "2023-08-08", "2023-08-07"),
+("2023-07-14", "123230214", "0006", "2023-08-13", "2023-08-10"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-03", "123230158", "0008", "2023-08-10", "2023-08-07"),
+("2023-07-23", "123230134", "0002", "2023-08-22", "2023-08-20"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-07", "123230127", "0001", "2023-08-14", "2023-08-10"),
+("2023-07-24", "123230128", "0007", "2023-08-23", "2023-08-21"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-08", "123230121", "0004", "2023-08-15", "2023-08-09"),
+("2023-08-01", "123230001", "0005", "2023-08-31", "2023-08-30"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-13", "123230067", "0003", "2023-08-20", "2023-08-19"),
+("2023-08-10", "123230067", "0003", "2023-09-09", "2023-09-08"),
 \end_layout
 
 \begin_layout Plain Layout
 
-("2023-08-20", "123230147", "0007", "2023-08-27", "2023-08-23");
+("2023-09-01", "123230147", "0007", "2023-10-01", "2023-09-24");
 \end_layout
 
 \end_inset
@@ -626,12 +1230,12 @@ status open
 
 \begin_layout Plain Layout
 
-Query OK, 9 rows affected (0,01 sec)
+Query OK, 9 rows affected (0,00 sec)
 \end_layout
 
 \begin_layout Plain Layout
 
-Records: 9  Duplicates: 0  Warnings: 0 
+Records: 9  Duplicates: 0  Warnings: 0
 \end_layout
 
 \end_inset
@@ -689,56 +1293,56 @@ status open
 
 \begin_layout Plain Layout
 
-|             1 | 2023-07-14 00:00:00 | 123230214    | 0006           |
- 2023-07-28 00:00:00 | 2023-07-28 00:00:00 |
+|             1 | 2023-06-03 00:00:00 | 123230158    | 0008           |
+ 2023-07-03 00:00:00 | 2023-07-01 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             2 | 2023-07-23 00:00:00 | 123230134    | 0002           |
- 2023-07-30 00:00:00 | 2023-07-26 00:00:00 |
+|             2 | 2023-06-17 00:00:00 | 123230121    | 0004           |
+ 2023-07-17 00:00:00 | 2023-07-15 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             3 | 2023-07-24 00:00:00 | 123230128    | 0007           |
- 2023-07-31 00:00:00 | 2023-07-28 00:00:00 |
+|             3 | 2023-06-24 00:00:00 | 123230127    | 0001           |
+ 2023-07-24 00:00:00 | 2023-07-23 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             4 | 2023-08-01 00:00:00 | 123230001    | 0005           |
- 2023-08-08 00:00:00 | 2023-08-07 00:00:00 |
+|             4 | 2023-07-14 00:00:00 | 123230214    | 0006           |
+ 2023-08-13 00:00:00 | 2023-08-10 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             5 | 2023-08-03 00:00:00 | 123230158    | 0008           |
- 2023-08-10 00:00:00 | 2023-08-07 00:00:00 |
+|             5 | 2023-07-23 00:00:00 | 123230134    | 0002           |
+ 2023-08-22 00:00:00 | 2023-08-20 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             6 | 2023-08-07 00:00:00 | 123230127    | 0001           |
- 2023-08-14 00:00:00 | 2023-08-10 00:00:00 |
+|             6 | 2023-07-24 00:00:00 | 123230128    | 0007           |
+ 2023-08-23 00:00:00 | 2023-08-21 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             7 | 2023-08-08 00:00:00 | 123230121    | 0004           |
- 2023-08-15 00:00:00 | 2023-08-09 00:00:00 |
+|             7 | 2023-08-01 00:00:00 | 123230001    | 0005           |
+ 2023-08-31 00:00:00 | 2023-08-30 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             8 | 2023-08-13 00:00:00 | 123230067    | 0003           |
- 2023-08-20 00:00:00 | 2023-08-19 00:00:00 |
+|             8 | 2023-08-10 00:00:00 | 123230067    | 0003           |
+ 2023-09-09 00:00:00 | 2023-09-08 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|             9 | 2023-08-20 00:00:00 | 123230147    | 0007           |
- 2023-08-27 00:00:00 | 2023-08-23 00:00:00 |
+|             9 | 2023-09-01 00:00:00 | 123230147    | 0007           |
+ 2023-10-01 00:00:00 | 2023-09-24 00:00:00 |
 \end_layout
 
 \begin_layout Plain Layout
@@ -779,7 +1383,8 @@ status open
 
 \begin_layout Plain Layout
 
-SELECT Kode_buku, Judul, 0.9 * Harga AS HargaDiskon FROM buku;
+SELECT Kode_buku, Judul, 0.9 * (Harga_Sebulan * 12) AS Harga_Setahun_Diskon
+ FROM Buku;
 \end_layout
 
 \end_inset
@@ -798,64 +1403,64 @@ status open
 
 \begin_layout Plain Layout
 
-+-----------+--------------------+-------------+
++-----------+--------------------+----------------------+
 \end_layout
 
 \begin_layout Plain Layout
 
-| Kode_buku | Judul              | HargaDiskon |
+| Kode_buku | Judul              | Harga_Setahun_Diskon |
 \end_layout
 
 \begin_layout Plain Layout
 
-+-----------+--------------------+-------------+
++-----------+--------------------+----------------------+
 \end_layout
 
 \begin_layout Plain Layout
 
 | 0001      | Kalkulus E.
  9 J.
- 1 |    315000.0 |
+ 1 |             378000.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0002      | Matematika Diskrit |    112500.0 |
+| 0002      | Matematika Diskrit |             135000.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0003      | Teori Aplikasi C++ |    157500.0 |
+| 0003      | Teori Aplikasi C++ |             189000.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0004      | Delphi Accounting  |    144000.0 |
+| 0004      | Delphi Accounting  |             172800.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0005      | Delphi Firebird    |    135000.0 |
+| 0005      | Delphi Firebird    |             162000.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0006      | Perpustakaan PHP   |     99000.0 |
+| 0006      | Perpustakaan PHP   |             118800.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0007      | Konsep Teknologi   |     40500.0 |
+| 0007      | Konsep Teknologi   |              48600.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| 0008      | Meditation         |     81000.0 |
+| 0008      | Meditation         |              97200.0 |
 \end_layout
 
 \begin_layout Plain Layout
 
-+-----------+--------------------+-------------+
++-----------+--------------------+----------------------+
 \end_layout
 
 \begin_layout Plain Layout
@@ -869,6 +1474,7 @@ status open
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Diskon.png
 	scale 50

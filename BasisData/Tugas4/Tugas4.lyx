@@ -1,0 +1,778 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{xcolor}
+\definecolor{CodeBackground}{gray}{0.97}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "frame=single,bgcolor=CodeBackground"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align right
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nama
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Levi Rizki Saputra
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+123230127
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kelas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IF-D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tampilkan jumlah siswa yang ada dalam tabel siswa (point 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT
+\end_layout
+
+\begin_layout Plain Layout
+
+  COUNT(nis) AS `jumlah siswa`
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM siswa;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan Jumlah penulis sebagai penerbit yang ada (point 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  COUNT(DISTINCT(penulis)) AS `penerbit yang ada` 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM buku;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan jumlah stock awal terbanyak sebagai stock terbanyak pada tahun
+ 2010 (point 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  MAX(stok_awal) AS `stock terbanyak`
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM buku
+\end_layout
+
+\begin_layout Plain Layout
+
+  WHERE tahun_terbit = 2010;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan Jumlah kelas paling sedikit (point 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT * 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM (
+\end_layout
+
+\begin_layout Plain Layout
+
+  SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+    kelas,
+\end_layout
+
+\begin_layout Plain Layout
+
+    COUNT(nis) AS jumlahSiswa
+\end_layout
+
+\begin_layout Plain Layout
+
+  FROM siswa
+\end_layout
+
+\begin_layout Plain Layout
+
+  GROUP BY kelas
+\end_layout
+
+\begin_layout Plain Layout
+
+) AS Kelas
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE jumlahSiswa = (
+\end_layout
+
+\begin_layout Plain Layout
+
+  SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+    MIN(jumlahSiswa)
+\end_layout
+
+\begin_layout Plain Layout
+
+  FROM (
+\end_layout
+
+\begin_layout Plain Layout
+
+    SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+      kelas,
+\end_layout
+
+\begin_layout Plain Layout
+
+      COUNT(nis) AS jumlahSiswa
+\end_layout
+
+\begin_layout Plain Layout
+
+    FROM siswa
+\end_layout
+
+\begin_layout Plain Layout
+
+    GROUP BY kelas
+\end_layout
+
+\begin_layout Plain Layout
+
+  ) AS Kelas
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Query ini akan menampilkan semua Kelas dengan jumlah siswa minimal.
+ Jika ada 3 kelas dengan jumlah siswa sama dan jumlahnya paling sedikit
+ maka ketiga-tiganya akan ditampilkan.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 4-1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alasan 3 kelas ditampilkan karena ketiga kelas mempunyai jumlah siswa sama.
+\end_layout
+
+\begin_layout Standard
+Jika kita menghapus 1 siswa dari kelas XI, maka jumlah siswa kelas XI akan
+ menjadi yang paling sedikit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM siswa WHERE nis = 11003;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 4-2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jika kita menghapus 1 siswa dari kelas X, maka jumlah siswa kelas X dan
+ kelas XI akan sama dan dua-duanya memiliki jumlah siswa paling sedikit.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM siswa WHERE nis = 12002; 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename 4-3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan total buku sebagai banyak buku per penulis sebagai penerbit (point
+ 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  penulis AS penerbit, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  COUNT(kode_buku) AS `banyak buku` 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM buku 
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY penulis;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan total judul sebagai total buku per penulis sebagai penerbit yang
+ lebih besar dari 1(point 20)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  penulis AS penerbit, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  COUNT(judul) AS `total buku` 
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM buku 
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY penulis
+\end_layout
+
+\begin_layout Plain Layout
+
+  HAVING `total buku` > 1;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tampilkan judul buku dan panjang karakternya diatas tahun 2009 (point 10)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT
+\end_layout
+
+\begin_layout Plain Layout
+
+	judul,
+\end_layout
+
+\begin_layout Plain Layout
+
+	LENGTH(judul) AS `panjang karakter`
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM buku
+\end_layout
+
+\begin_layout Plain Layout
+
+	WHERE tahun_terbit > 2009;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 7.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+buatlah query seperti hasil dibawah ini (point 20):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT
+\end_layout
+
+\begin_layout Plain Layout
+
+  Siswa.nis,
+\end_layout
+
+\begin_layout Plain Layout
+
+  Siswa.nama,
+\end_layout
+
+\begin_layout Plain Layout
+
+  DATE_FORMAT(
+\end_layout
+
+\begin_layout Plain Layout
+
+    Peminjaman.tgl_pinjam, 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\begin_inset Quotes eld
+\end_inset
+
+%d %M %Y
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Plain Layout
+
+  AS tanggal_pinjam
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM siswa Siswa
+\end_layout
+
+\begin_layout Plain Layout
+
+  INNER JOIN peminjaman Peminjaman
+\end_layout
+
+\begin_layout Plain Layout
+
+    ON Peminjaman.nis = Siswa.nis
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Peminjaman.tgl_pinjam >= '2012-09-27'; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

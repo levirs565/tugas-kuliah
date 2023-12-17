@@ -202,7 +202,7 @@ SELECT * FROM employees WHERE
 
 \begin_layout Plain Layout
 
-	firstName = 
+  firstName = 
 \begin_inset Quotes eld
 \end_inset
 
@@ -215,7 +215,7 @@ gerard
 
 \begin_layout Plain Layout
 
-	jobTitle = 
+  jobTitle = 
 \begin_inset Quotes eld
 \end_inset
 
@@ -312,27 +312,27 @@ SELECT
 
 \begin_layout Plain Layout
 
-	Base.orderNumber,
+  Base.orderNumber,
 \end_layout
 
 \begin_layout Plain Layout
 
-	Detail.productCode,
+  Detail.productCode,
 \end_layout
 
 \begin_layout Plain Layout
 
-	Detail.quantityOrdered,
+  Detail.quantityOrdered,
 \end_layout
 
 \begin_layout Plain Layout
 
-	Detail.orderLineNumber,
+  Detail.orderLineNumber,
 \end_layout
 
 \begin_layout Plain Layout
 
-	Detail.priceEach * Detail.quantityOrdered AS totalPrice 
+  Detail.priceEach * Detail.quantityOrdered AS totalPrice 
 \end_layout
 
 \begin_layout Plain Layout
@@ -342,12 +342,12 @@ FROM orders Base
 
 \begin_layout Plain Layout
 
-	RIGHT JOIN orderdetails AS Detail 
+  INNER JOIN orderdetails AS Detail 
 \end_layout
 
 \begin_layout Plain Layout
 
-		ON Detail.orderNumber = Base.orderNumber 
+    ON Detail.orderNumber = Base.orderNumber 
 \end_layout
 
 \begin_layout Plain Layout
@@ -543,6 +543,30 @@ status open
  |
 \end_layout
 
+\begin_layout Plain Layout
+
+|       10266 | S12_1099    |              44 |              14 |    8304.12
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10150 | S10_1949    |              45 |               8 |    8197.20
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10188 | S10_4698    |              45 |               3 |    8191.80
+ |
+\end_layout
+
+\begin_layout Plain Layout
+
+|       10114 | S18_3232    |              48 |               4 |    8128.32
+ |
+\end_layout
+
 \end_inset
 
 
@@ -575,166 +599,12 @@ status open
 
 \begin_layout Plain Layout
 
-SELECT productCode, productName FROM products WHERE productCode LIKE 
-\begin_inset Quotes eld
-\end_inset
-
-%8
-\begin_inset Quotes erd
-\end_inset
-
-;
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename 3-1.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-+-------------+---------------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-| productCode | productName                           |
-\end_layout
-
-\begin_layout Plain Layout
-
-+-------------+---------------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-| S10_1678    | 1969 Harley Davidson Ultimate Chopper |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S10_4698    | 2003 Harley-Davidson Eagle Drag Bike  |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S12_1108    | 2001 Ferrari Enzo                     |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S12_3148    | 1969 Corvair Monza                    |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_2238    | 1998 Chrysler Plymouth Prowler        |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_2248    | 1911 Ford Town Car                    |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_3278    | 1969 Dodge Super Bee                  |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_4668    | 1939 Cadillac Limousine               |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_1578    | 1997 BMW R 1100 S                     |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_1628    | 1966 Shelby Cobra 427 S/C             |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4048    | 1992 Porsche Cayenne Turbo Silver     |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4258    | 1936 Chrysler Airflow                 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4278    | 1900s Vintage Tri-Plane               |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S32_1268    | 1980's GM Manhattan Express           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S700_1138   | The Schooner Bluenose                 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S700_1938   | The Mayflower                         |
-\end_layout
-
-\begin_layout Plain Layout
-
-+-------------+---------------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-16 rows in set (0,00 sec)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=SQL"
-inline false
-status open
-
-\begin_layout Plain Layout
-
 UPDATE products SET 
 \end_layout
 
 \begin_layout Plain Layout
 
-  productName = IF(productName LIKE 
+  productDescription = IF(productName LIKE 
 \begin_inset Quotes eld
 \end_inset
 
@@ -812,154 +682,7 @@ Rows matched: 16  Changed: 16  Warnings: 0
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename 3-2.png
-	scale 50
-
-\end_inset
-
-
-\begin_inset listings
-lstparams "language=SQL"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-SELECT productCode, productName FROM products WHERE productCode LIKE 
-\begin_inset Quotes eld
-\end_inset
-
-%8
-\begin_inset Quotes erd
-\end_inset
-
-;
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-+-------------+--------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-| productCode | productName                    |
-\end_layout
-
-\begin_layout Plain Layout
-
-+-------------+--------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-| S10_1678    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S10_4698    | Kemungkinan Barang Tidak Antik |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S12_1108    | Kemungkinan Barang Tidak Antik |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S12_3148    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_2238    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_2248    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_3278    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S18_4668    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_1578    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_1628    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4048    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4258    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S24_4278    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S32_1268    | Barang antik nan Tua           |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S700_1138   | Kemungkinan Barang Tidak Antik |
-\end_layout
-
-\begin_layout Plain Layout
-
-| S700_1938   | Kemungkinan Barang Tidak Antik |
-\end_layout
-
-\begin_layout Plain Layout
-
-+-------------+--------------------------------+
-\end_layout
-
-\begin_layout Plain Layout
-
-16 rows in set (0,00 sec)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename 3-3.png
+	filename 3.png
 	scale 50
 
 \end_inset
@@ -1244,7 +967,7 @@ FROM customers C
 
 \begin_layout Plain Layout
 
-  RIGHT JOIN orders O 
+  LEFT JOIN orders O 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1254,7 +977,7 @@ FROM customers C
 
 \begin_layout Plain Layout
 
-  RIGHT JOIN orderdetails D
+  LEFT JOIN orderdetails D
 \end_layout
 
 \begin_layout Plain Layout
@@ -1299,114 +1022,12 @@ status open
 
 \begin_layout Plain Layout
 
-| Online Diecast Creations Co.
-       |         1248 |
+| Atelier graphique                  |          270 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| Blauer See Auto, Co.
-               |          811 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Vitachrome Inc.
-                    |          787 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Baane Mini Imports                 |         1082 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Euro+ Shopping Channel             |         9327 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Danish Wholesale Imports           |         1315 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Rovelli Gifts                      |         1650 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Land of Toys Inc.
-                  |         1631 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Cruz & Sons Co.
-                    |          961 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Motor Mint Distributors Inc.
-       |          730 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| AV Stores, Co.
-                     |         1778 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Mini Wheels Co.
-                    |          692 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Volvo Model Replicas, Co           |          647 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Mini Gifts Distributors Ltd.
-       |         6366 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| La Corne D'abondance, Co.
-          |          836 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Classic Legends Inc.
-               |          720 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Royale Belge                       |          278 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Dragon Souveniers, Ltd.
-            |         1524 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Enaco Distributors                 |          882 |
-\end_layout
-
-\begin_layout Plain Layout
-
-| Salzburg Collectables              |         1442 |
+| Signal Gift Stores                 |          929 |
 \end_layout
 
 \begin_layout Plain Layout
@@ -1417,12 +1038,107 @@ status open
 
 \begin_layout Plain Layout
 
-| Reims Collectables                 |         1433 |
+| La Rochelle Gifts                  |         1832 |
 \end_layout
 
 \begin_layout Plain Layout
 
-| Marseille Mini Autos               |          804 |
+| Baane Mini Imports                 |         1082 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mini Gifts Distributors Ltd.
+       |         6366 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Blauer See Auto, Co.
+               |          811 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Mini Wheels Co.
+                    |          692 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Land of Toys Inc.
+                  |         1631 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Euro+ Shopping Channel             |         9327 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Volvo Model Replicas, Co           |          647 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Danish Wholesale Imports           |         1315 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Saveley & Henriot, Co.
+             |         1428 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Dragon Souveniers, Ltd.
+            |         1524 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Muscle Machine Inc                 |         1775 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Diecast Classics Inc.
+              |         1111 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Technics Stores Inc.
+               |         1179 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Handji Gifts& Co                   |         1236 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Herkku Gifts                       |          973 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Daedalus Designs Imports           |          699 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| La Corne D'abondance, Co.
+          |          836 |
+\end_layout
+
+\begin_layout Plain Layout
+
+| Cambridge Collectables Co.
+         |          357 |
 \end_layout
 
 \end_inset
@@ -1468,17 +1184,18 @@ SELECT
 
 \begin_layout Plain Layout
 
-  P.productName, 
+  GROUP_CONCAT(P.productName), 
 \end_layout
 
 \begin_layout Plain Layout
 
-  D.quantityOrdered as `quantity ordered`,
+  SUM(D.quantityOrdered) as `quantity ordered`,
 \end_layout
 
 \begin_layout Plain Layout
 
-  (D.priceEach - P.buyPrice) * D.quantityOrdered * 1000 as `pendapatan product`,
+  SUM((D.priceEach - P.buyPrice) * D.quantityOrdered * 1000) as `pendapatan
+ product`,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1493,7 +1210,7 @@ FROM orders O
 
 \begin_layout Plain Layout
 
-  JOIN orderdetails D
+  INNER JOIN orderdetails D
 \end_layout
 
 \begin_layout Plain Layout
@@ -1503,7 +1220,7 @@ FROM orders O
 
 \begin_layout Plain Layout
 
-  JOIN products P
+  INNER JOIN products P
 \end_layout
 
 \begin_layout Plain Layout
@@ -1513,7 +1230,12 @@ FROM orders O
 
 \begin_layout Plain Layout
 
-WHERE (D.quantityOrdered * P.buyPrice * 1000) BETWEEN 500000 AND 800000;
+GROUP BY O.orderNumber
+\end_layout
+
+\begin_layout Plain Layout
+
+  HAVING SUM(D.quantityOrdered * P.buyPrice * 1000) BETWEEN 500000 AND 800000
 \end_layout
 
 \end_inset
@@ -1526,206 +1248,38 @@ status open
 
 \begin_layout Plain Layout
 
-+-------------+---------------------------------------------+------------------+
---------------------+------------+
++-------------+----------------------------------------+------------------+-----
+---------------+------------+
 \end_layout
 
 \begin_layout Plain Layout
 
-| orderNumber | productName                                 | quantity ordered
+| orderNumber | GROUP_CONCAT(P.productName)            | quantity ordered
  | pendapatan product | orderDate  |
 \end_layout
 
 \begin_layout Plain Layout
 
-+-------------+---------------------------------------------+------------------+
---------------------+------------+
++-------------+----------------------------------------+------------------+-----
+---------------+------------+
 \end_layout
 
 \begin_layout Plain Layout
 
-|       10103 | 1926 Ford Fire Engine                       |          
-     22 |          735240.00 | 2003-01-29 |
+|       10116 | 1950's Chicago Surface Lines Streetcar |               27
+ |             906.12 | 2003-04-11 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|       10104 | 1958 Chevy Corvette Limited Edition         |          
-     44 |          638000.00 | 2003-01-31 |
+|       10144 | 1928 Ford Phaeton Deluxe               |               20
+ |             467.80 | 2003-08-13 |
 \end_layout
 
 \begin_layout Plain Layout
 
-|       10107 | 1936 Harley Davidson El Knucklehead         |          
-     29 |          825630.00 | 2003-02-24 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10108 | 1982 Ducati 996 R                           |          
-     27 |          325890.00 | 2003-03-03 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10113 | 1996 Peterbilt 379 Stake Bed with Outrigger |          
-     23 |          579830.00 | 2003-03-26 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10114 | 1954 Greyhound Scenicruiser                 |          
-     28 |          499800.00 | 2003-04-01 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10116 | 1950's Chicago Surface Lines Streetcar      |          
-     27 |          906120.00 | 2003-04-11 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10117 | 1962 City of Detroit Streetcar              |          
-     21 |          381360.00 | 2003-04-16 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10119 | 1937 Horch 930V Limousine                   |          
-     20 |          736400.00 | 2003-04-28 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10122 | 1982 Lamborghini Diablo                     |          
-     39 |          721500.00 | 2003-05-08 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10122 | 1982 Ducati 996 R                           |          
-     31 |          299150.00 | 2003-05-08 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10124 | 1957 Ford Thunderbird                       |          
-     23 |          737610.00 | 2003-05-21 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10127 | 1970 Dodge Coronet                          |          
-     20 |          369800.00 | 2003-06-03 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10127 | 1958 Chevy Corvette Limited Edition         |          
-     39 |          717210.00 | 2003-06-03 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10127 | 1950's Chicago Surface Lines Streetcar      |          
-     29 |          991220.00 | 2003-06-03 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10131 | 1937 Horch 930V Limousine                   |          
-     29 |          762700.00 | 2003-06-16 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10131 | Boeing X-32A JSF                            |          
-     21 |          156450.00 | 2003-06-16 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10133 | 1930 Buick Marquette Phaeton                |          
-     27 |          270810.00 | 2003-06-27 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10134 | 1936 Harley Davidson El Knucklehead         |          
-     30 |          817500.00 | 2003-07-01 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10135 | 1970 Plymouth Hemi Cuda                     |          
-     24 |          976800.00 | 2003-07-02 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10135 | 1961 Chevrolet Impala                       |          
-     23 |         1022810.00 | 2003-07-02 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10135 | 1982 Ducati 996 R                           |          
-     33 |          477840.00 | 2003-07-02 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10137 | Barang antik nan Tua                        |          
-     26 |          287820.00 | 2003-07-10 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10138 | Barang antik nan Tua                        |          
-     22 |          399520.00 | 2003-07-07 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10138 | 1957 Ford Thunderbird                       |          
-     23 |          704950.00 | 2003-07-07 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10138 | 1938 Cadillac V-16 Presidential Limousine   |          
-     33 |          591360.00 | 2003-07-07 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10138 | 1936 Mercedes Benz 500k Roadster            |          
-     29 |          321030.00 | 2003-07-07 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10139 | 1934 Ford V8 Coupe                          |          
-     20 |          362400.00 | 2003-07-16 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10140 | Barang antik nan Tua                        |          
-     29 |          496190.00 | 2003-07-24 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10141 | 1970 Dodge Coronet                          |          
-     20 |          369800.00 | 2003-08-01 |
-\end_layout
-
-\begin_layout Plain Layout
-
-|       10141 | 1954 Greyhound Scenicruiser                 |          
-     24 |          649200.00 | 2003-08-01 |
++-------------+----------------------------------------+------------------+-----
+---------------+------------+
 \end_layout
 
 \end_inset

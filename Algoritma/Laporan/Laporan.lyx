@@ -1,0 +1,8618 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{eso-pic}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage[most]{tcolorbox}
+
+\tcbuselibrary{breakable}
+\tcbuselibrary{minted}
+
+\definecolor{CodeBackground}{gray}{0.97}
+\renewcommand\theFancyVerbLine{\fontsize{11}{13}\arabic{FancyVerbLine}}
+\renewcommand{\chaptermark}[1]{\markright{\MakeUppercase{TUGAS \thechapter:\ #1}}{}}
+
+\BeforeBeginEnvironment{minted}
+{\begin{tcolorbox}[breakable]}
+
+\AfterEndEnvironment{minted}
+{\end{tcolorbox}}
+
+\raggedbottom
+\renewcommand\chaptername{TUGAS} 
+
+\setlength\extrarowheight{5pt}
+
+\titleformat
+{\chapter} % command
+[display] % shape
+{\centering\bfseries\fontsize{13}{16}} % format
+{TUGAS \ \thechapter} % label
+{0.5ex} % sep
+{
+    \centering
+} % before-code
+[
+] % after-code
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+
+\titleformat{\section}[block]
+{\bfseries\fontsize{13}{15}}
+{\thesection.}{0.5em}{}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language bahasa
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Times New Roman"
+\font_sans "default" "default"
+\font_typewriter "default" "Source Code Pro"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "fontsize={\fontsize{11}{13}},linenos=true,breaklines=true,breakanywhere=true,tabsize=2,xleftmargin=12pt,frame=leftline,numbersep=4pt"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+\paragraph_spacing single
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{14}{16}
+\backslash
+selectfont 
+\end_layout
+
+\end_inset
+
+LAPORAN AKHIR
+\begin_inset Newline newline
+\end_inset
+
+PRAKTIKUM IMPLEMENTASI BASIS DATA
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{COVER}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../Logo/UPN.png
+	width 7.93cm
+	height 7.76cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+DISUSUN OLEH:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2.73cm">
+<column alignment="center" valignment="middle" width="0pt">
+<column alignment="left" valignment="middle" width="8.32cm">
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+NIM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+123230127
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+NAMA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+LEVI RIZKI SAPUTRA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+KELAS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+IF-D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+ASISTEN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Gregorius Rafael Santosa
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kesha Azka Afleni
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\series bold
+\size large
+PROGRAM STUDI INFORMATIKA
+\begin_inset Newline newline
+\end_inset
+
+JURUSAN INFORMATIKA
+\begin_inset Newline newline
+\end_inset
+
+FAKULTAS TEKNIK INDUSTRI
+\begin_inset Newline newline
+\end_inset
+
+UNIVERSITAS PEMBANGUNAN NASIONAL 
+\begin_inset Quotes eld
+\end_inset
+
+VETERAN
+\begin_inset Quotes erd
+\end_inset
+
+ YOGYAKARTA
+\begin_inset Newline newline
+\end_inset
+
+2023
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-20pt}
+\backslash
+fontsize{14}{16}
+\backslash
+selectfont 
+\end_layout
+
+\end_inset
+
+HALAMAN PENGESAHAN
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\noindent
+\align center
+
+\series bold
+LAPORAN AKHIR PRAKTIKUM
+\begin_inset Newline newline
+\end_inset
+
+IMPLEMENTASI BASIS DATA
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AddToShipoutPictureBG*{
+\backslash
+put(3.67cm,
+\backslash
+paperheight-14.12cm-5.44cm){
+\backslash
+includegraphics[width=14.09cm,height=14.12cm]{../../Logo/UPN3.png}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Disusun Oleh:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="5.7cm">
+<column alignment="right" valignment="top" width="5.54cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Levi Rizki Saputra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+123230127
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Telah Diperiksa dan Disetujui oleh Asisten Praktikum Manajemen Basis
+\begin_inset Newline newline
+\end_inset
+
+Data 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="6.38cm">
+<column alignment="center" valignment="top" width="6.53cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menyetujui,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Asisten
+\end_layout
+
+\begin_layout Plain Layout
+Praktikum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Asisten
+\end_layout
+
+\begin_layout Plain Layout
+Praktikum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Gregorius Rafael Santosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kesha Azka Afleni
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIM.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NIM.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{DAFTAR ISI}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Tipe Data, Operator, dan Ekspresi
+\end_layout
+
+\begin_layout Section
+Source Code Program
+\end_layout
+
+\begin_layout Chapter
+Statement Pengendalian
+\end_layout
+
+\begin_layout Section
+Source Code Program
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C++"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/*
+\end_layout
+
+\begin_layout Plain Layout
+
+  Aplikasi untuk menginput data postingan
+\end_layout
+
+\begin_layout Plain Layout
+
+  kemudian mencetak data postingan
+\end_layout
+
+\begin_layout Plain Layout
+
+  Hasil output berwarna-warni
+\end_layout
+
+\begin_layout Plain Layout
+
+  Dibuat oleh Levi Rizki Saputra
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <iomanip>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <limits>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <ctime>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <windows.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sys/ioctl.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <unistd.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+using namespace std;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+namespace UtilitasTerminal
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Fungsi pewarnaan cout
+\end_layout
+
+\begin_layout Plain Layout
+
+    Sistem non-Windows mendukung ANSI escape
+\end_layout
+
+\begin_layout Plain Layout
+
+    Windows tidak menundkung ANSI escape
+\end_layout
+
+\begin_layout Plain Layout
+
+    Dibutuhkan fungsi yang berbeda untuk mewarnai stdout
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  enum Warna
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    Merah,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Biru,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Kuning,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Hijau,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Bawaan,
+\end_layout
+
+\begin_layout Plain Layout
+
+    LatarHijau
+\end_layout
+
+\begin_layout Plain Layout
+
+  };
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tetapkanWarna(Warna warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    WORD kodeWarna;
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Merah:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Hijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Kuning:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED | FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Biru:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_BLUE | FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case LatarHijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = BACKGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Bawaan:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      return;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), kodeWarna);
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    string kodeWarna;
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Merah:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "31";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Hijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "32";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Kuning:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "33";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Biru:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "36";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case LatarHijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "42";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Bawaan:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "0";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      return;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "
+\backslash
+033[" << kodeWarna << "m";
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  unsigned int jumlahKolom()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+\end_layout
+
+\begin_layout Plain Layout
+
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return csbi.srWindow.Right - csbi.srWindow.Left + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    winsize w;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return w.ws_col;
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PANJANG_PROMPT 25
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanPrompt(string pertanyaan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << left << setw(PANJANG_PROMPT) << pertanyaan
+\end_layout
+
+\begin_layout Plain Layout
+
+       << ": ";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanError(string error)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Merah);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << error << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define HEADING_PADDING 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanHeading(string nama)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    const int margin = jumlahKolom() / 2 - nama.length() / 2 - HEADING_PADDING;
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(margin) << "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(LatarHijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(HEADING_PADDING) << "" << nama << setw(HEADING_PADDING)
+ << "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+       << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+const string FORMAT_TANGGAL = "dd/mm/yyyy";
+\end_layout
+
+\begin_layout Plain Layout
+
+class Tanggal
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mTanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mBulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Tanggal(int tanggal, int bulan, int tahun) : mTanggal(tanggal), mBulan(bulan),
+ mTahun(tahun)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static Tanggal sekarang()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    time_t detik = time(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    tm *dataWaktu = localtime(&detik);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return Tanggal(dataWaktu->tm_mday, dataWaktu->tm_mon + 1, dataWaktu->tm_year
+ + 1900);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static int jarakHari(Tanggal dari, Tanggal ke)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    time_t jarakDetik = ke.keDetik() - dari.keDetik();
+\end_layout
+
+\begin_layout Plain Layout
+
+    return jarakDetik / 60 / 60 / 24;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  time_t keDetik()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tm dataWaktu;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_year = mTahun - 1900;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_mon = mBulan - 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_mday = mTanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_hour = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_min = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_sec = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_isdst = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return mktime(&dataWaktu);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  string toString()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    stringstream stream;
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << right << setfill('0');
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(2) << mTanggal << "/";
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(2) << mBulan << "/";
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(4) << mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return stream.str();
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int getTahun()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return this->mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_PUBLIK "Publik (Semua orang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_PRIVAT "Privat (Hanya anda yang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_TERPROTEKSI "Terproteksi (Hanya orang yang anda
+ pilih yang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+enum Visibilitas
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasPublik,
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasPrivat,
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasTerproteksi,
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Postingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan() : tanggalTerbit(Tanggal(0, 0, 0))
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  string id;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string judul;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string tags;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Visibilitas visibilitas;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string orangYangDiizinkan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Tanggal tanggalTerbit;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string konten;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_ID "ID"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_JUDUL "Judul"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_TAG "Tag"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_TANGGAL_TERBIT "Tanggal Terbit"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_VISIBILITAS "Visibilitas"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_KONTEN "Konten"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_ORANG_DIIZINKAN "Orang yang Diizinkan"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class PenerbitPostingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan &mPostingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput id
+\end_layout
+
+\begin_layout Plain Layout
+
+    id tidak boleh berisi spasi atau kosong
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika berisi spasi atau kosong, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan cin >> karena saat ada spasi karakter setelah spasi
+\end_layout
+
+\begin_layout Plain Layout
+
+    akan diberikan ke pertanyaan selanjutnya
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputId()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ID);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, mPostingan.id);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (mPostingan.id.find(' ') != string::npos)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tidak boleh ada spasi di dalam
+ ID");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (mPostingan.id.length() == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("ID tidak boleh kosong");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput Judul
+\end_layout
+
+\begin_layout Plain Layout
+
+    judul tidak boleh kosong
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika kosong, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan cin >> tidak mendukung spasi
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputJudul()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_JUDUL);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, mPostingan.judul);
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (mPostingan.judul.length() == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Judul tidak boleh kosong.");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput tanggal
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tanggal harus berformat dd/mm/yyy
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika format salah atau bukan angka, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan scanf("%02d/%02d/%04d") karena jika format salah maka
+\end_layout
+
+\begin_layout Plain Layout
+
+    input diberikan ke pertanyaan selanjutnya
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputTanggalTerbit()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int tanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int bulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int tahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+    string input;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_TANGGAL_TERBIT);
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "(" << FORMAT_TANGGAL << ") ";
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, input);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      // dd/mm/yyyy
+\end_layout
+
+\begin_layout Plain Layout
+
+      //   /  /
+\end_layout
+
+\begin_layout Plain Layout
+
+      // 0123456789
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (input.length() != FORMAT_TANGGAL.length() || input.at(2) != '/' ||
+ input.at(5) != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Format tanggal tidak valid.
+ Gunakan format");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stringstream stream(input);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> tanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (stream.get() != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tanggal tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> bulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (stream.get() != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Bulan tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> tahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (!stream.eof())
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tahun tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (tanggal < 1 || tanggal > 31)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tanggal hanya boleh dari 1 sampai
+ 31");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (bulan < 1 || bulan > 12)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Bulan hanya boleh dari 1 sampai
+ 12");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (tahun < 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tahun tidak boleh kurang dari
+ 1");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    mPostingan.tanggalTerbit = Tanggal(tanggal, bulan, tahun);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput banyak baris
+\end_layout
+
+\begin_layout Plain Layout
+
+    Baris kosong digunakan untuk mengakhiri input
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputKonten()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Tulis Konten ";
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "(Mendukung Banyak Baris.
+ Akhiri dengan Baris Kosong)" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    mPostingan.konten = "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    string baris;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    do
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, baris);
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (mPostingan.konten.length() > 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        mPostingan.konten.append("
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+      mPostingan.konten.append(baris);
+\end_layout
+
+\begin_layout Plain Layout
+
+    } while (baris.length() != 0);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputVisibilitas()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    string daftarPilihan[3] = {
+\end_layout
+
+\begin_layout Plain Layout
+
+      PESAN_VISIBILITAS_PUBLIK,
+\end_layout
+
+\begin_layout Plain Layout
+
+      PESAN_VISIBILITAS_PRIVAT,
+\end_layout
+
+\begin_layout Plain Layout
+
+      PESAN_VISIBILITAS_TERPROTEKSI};
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Pilihan Visibilitas (Pilih berdasarkan angka)" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < sizeof(daftarPilihan) / sizeof(string); i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << i + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << ".
+ " << daftarPilihan[i] << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    int pilihan;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_VISIBILITAS);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      cin >> pilihan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      cin.clear();
+\end_layout
+
+\begin_layout Plain Layout
+
+      cin.ignore(numeric_limits<streamsize>::max(), '
+\backslash
+n');
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (cin.gcount() > 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tidak boleh mengandung selain
+ angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        bool valid = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+        switch (pilihan)
+\end_layout
+
+\begin_layout Plain Layout
+
+        {
+\end_layout
+
+\begin_layout Plain Layout
+
+        case 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+          mPostingan.visibilitas = VisibilitasPublik;
+\end_layout
+
+\begin_layout Plain Layout
+
+          break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        case 2:
+\end_layout
+
+\begin_layout Plain Layout
+
+          mPostingan.visibilitas = VisibilitasPrivat;
+\end_layout
+
+\begin_layout Plain Layout
+
+          break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        case 3:
+\end_layout
+
+\begin_layout Plain Layout
+
+          mPostingan.visibilitas = VisibilitasTerproteksi;
+\end_layout
+
+\begin_layout Plain Layout
+
+          break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        default:
+\end_layout
+
+\begin_layout Plain Layout
+
+          valid = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+          UtilitasTerminal::tampilkanError("Pilihan harus di antara 1 sampai
+ 3");
+\end_layout
+
+\begin_layout Plain Layout
+
+          break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (valid)
+\end_layout
+
+\begin_layout Plain Layout
+
+          break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  PenerbitPostingan(Postingan &postingan) : mPostingan(postingan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void run()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanHeading("Form Penerbitan Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputId();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputJudul();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TAG);
+\end_layout
+
+\begin_layout Plain Layout
+
+    getline(cin, mPostingan.tags);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputTanggalTerbit();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputVisibilitas();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (mPostingan.visibilitas == VisibilitasTerproteksi)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ORANG_DIIZINKAN);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, mPostingan.orangYangDiizinkan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputKonten();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tanggal tanggalSekarang = Tanggal::sekarang();
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Sekarang tanggal " << tanggalSekarang.toString() << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    int jarak = Tanggal::jarakHari(tanggalSekarang, mPostingan.tanggalTerbit);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (jarak == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Hari ini adalah hari penerbitan postingan anda" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Selamat postingan anda telah diterbitkan";
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (jarak < 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Tanggal penerbitan adalah " << (-jarak) << " hari yang lalu"
+ << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Postingan langsung diterbitkan" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Postingan akan diterbitkan " << jarak << " hari lagi" <<
+ endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    Sleep(1000);
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    sleep(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class PratinjauPostingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan &mPostingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static unsigned int hitungJumlahKata(string str)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    unsigned int jumlah = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    bool didalamString = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (string::iterator it = str.begin(); it != str.end(); it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (*it == ' ' || *it == '
+\backslash
+r' || *it == '
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        didalamString = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (!didalamString)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        didalamString = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+        jumlah++;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return jumlah;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  PratinjauPostingan(Postingan &postingan) : mPostingan(postingan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void run()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanHeading("Pratinjau Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_ID);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.id << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_JUDUL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.judul << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TAG);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.tags << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TANGGAL_TERBIT);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.tanggalTerbit.toString() << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Visibilitas");
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (mPostingan.visibilitas)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasPublik:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_PUBLIK;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasPrivat:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_PRIVAT;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasTerproteksi:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_TERPROTEKSI;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (mPostingan.visibilitas == VisibilitasTerproteksi)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ORANG_DIIZINKAN);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << mPostingan.orangYangDiizinkan << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Jumlah Kata");
+\end_layout
+
+\begin_layout Plain Layout
+
+    int jumlahKata = hitungJumlahKata(mPostingan.konten);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << jumlahKata << " (";
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (jumlahKata < 50)
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Sedikit";
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (jumlahKata < 100)
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Sedang";
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Banyak";
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << ")" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_KONTEN);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+       << mPostingan.konten;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "Dibuat oleh ";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "Levi Rizki Saputra ";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "(" << 123230127 << ")";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+     << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan postingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  PenerbitPostingan penerbit(postingan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  penerbit.run();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  PratinjauPostingan pratinjau(postingan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  pratinjau.run();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Statement Perulangan
+\end_layout
+
+\begin_layout Section
+Source Code Program
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C++"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <iomanip>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <vector>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <limits>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <ctime>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <windows.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <termios.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <unistd.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sys/ioctl.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+using namespace std;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+namespace UtilitasTerminal
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Fungsi pewarnaan cout
+\end_layout
+
+\begin_layout Plain Layout
+
+    Sistem non-Windows mendukung ANSI escape
+\end_layout
+
+\begin_layout Plain Layout
+
+    Windows tidak menundkung ANSI escape
+\end_layout
+
+\begin_layout Plain Layout
+
+    Dibutuhkan fungsi yang berbeda untuk mewarnai stdout
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  enum Warna
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    Merah,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Biru,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Kuning,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Hijau,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Bawaan,
+\end_layout
+
+\begin_layout Plain Layout
+
+    LatarHijau
+\end_layout
+
+\begin_layout Plain Layout
+
+  };
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tetapkanWarna(Warna warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    WORD kodeWarna;
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Merah:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Hijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Kuning:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED | FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Biru:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_BLUE | FOREGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case LatarHijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = BACKGROUND_GREEN;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Bawaan:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      return;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), kodeWarna);
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    string kodeWarna;
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (warna)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Merah:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "31";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Hijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "32";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Kuning:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "33";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Biru:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "36";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case LatarHijau:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "42";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case Bawaan:
+\end_layout
+
+\begin_layout Plain Layout
+
+      kodeWarna = "0";
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      return;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "
+\backslash
+033[" << kodeWarna << "m";
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  unsigned int jumlahKolom()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+\end_layout
+
+\begin_layout Plain Layout
+
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return csbi.srWindow.Right - csbi.srWindow.Left + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    winsize w;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return w.ws_col;
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PANJANG_PROMPT 25
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanPrompt(string pertanyaan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << left << setw(PANJANG_PROMPT) << pertanyaan
+\end_layout
+
+\begin_layout Plain Layout
+
+       << ": ";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanError(string error)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Merah);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << error << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define HEADING_PADDING 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void tampilkanHeading(string nama)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setfill(' ');
+\end_layout
+
+\begin_layout Plain Layout
+
+    const int margin = jumlahKolom() / 2 - nama.length() / 2 - HEADING_PADDING;
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(margin) << "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(LatarHijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(HEADING_PADDING) << "" << nama << setw(HEADING_PADDING)
+ << "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+       << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  enum Navigasi
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    Enter,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Atas,
+\end_layout
+
+\begin_layout Plain Layout
+
+    Bawah,
+\end_layout
+
+\begin_layout Plain Layout
+
+    TidakDikenal
+\end_layout
+
+\begin_layout Plain Layout
+
+  };
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifndef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+  termios lastTermiosAttr;
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void aktifkanInputNavigasi()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifndef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    termios attr;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tcgetattr(STDIN_FILENO, &attr);
+\end_layout
+
+\begin_layout Plain Layout
+
+    lastTermiosAttr = attr;
+\end_layout
+
+\begin_layout Plain Layout
+
+    attr.c_lflag &= ~ICANON & ~ECHO;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &attr);
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void nonaktifkanInputNavigasi()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifndef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    termios attr;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tcsetattr(STDIN_FILENO, TCSANOW, &lastTermiosAttr);
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Navigasi inputNavigasi()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifndef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    char input;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    cin >> noskipws >> input >> skipws;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (input == '
+\backslash
+x1b')
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      cin >> input;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (input == '[')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        cin >> input;
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (input == 'A')
+\end_layout
+
+\begin_layout Plain Layout
+
+          return Atas;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (input == 'B')
+\end_layout
+
+\begin_layout Plain Layout
+
+          return Bawah;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else
+\end_layout
+
+\begin_layout Plain Layout
+
+          return TidakDikenal;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return TidakDikenal;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (input == '
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      return Enter;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      return TidakDikenal;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    HANDLE hStdIn = GetStdHandle(STD_INPUT_HANDLE);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    DWORD events = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    DWORD eventRead = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    do
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      GetNumberOfConsoleInputEvents(hStdIn, &events);
+\end_layout
+
+\begin_layout Plain Layout
+
+    } while (events == 0);
+\end_layout
+
+\begin_layout Plain Layout
+
+    INPUT_RECORD eventBuffer[events];
+\end_layout
+
+\begin_layout Plain Layout
+
+    ReadConsoleInput(hStdIn, eventBuffer, events, &eventRead);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (DWORD i = 0; i < eventRead; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (eventBuffer[i].EventType == KEY_EVENT && eventBuffer[i].Event.KeyEvent.bKe
+yDown)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        switch (eventBuffer[i].Event.KeyEvent.wVirtualKeyCode)
+\end_layout
+
+\begin_layout Plain Layout
+
+        {
+\end_layout
+
+\begin_layout Plain Layout
+
+        case VK_UP:
+\end_layout
+
+\begin_layout Plain Layout
+
+          return Atas;
+\end_layout
+
+\begin_layout Plain Layout
+
+        case VK_DOWN:
+\end_layout
+
+\begin_layout Plain Layout
+
+          return Bawah;
+\end_layout
+
+\begin_layout Plain Layout
+
+        case VK_RETURN:
+\end_layout
+
+\begin_layout Plain Layout
+
+          return Enter;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return TidakDikenal;
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+  COORD lastCursorPos;
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void simpanPosisiCursor()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+\end_layout
+
+\begin_layout Plain Layout
+
+    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+\end_layout
+
+\begin_layout Plain Layout
+
+    GetConsoleScreenBufferInfo(hStdOut, &csbi);
+\end_layout
+
+\begin_layout Plain Layout
+
+    lastCursorPos = csbi.dwCursorPosition;
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "
+\backslash
+x1b[s";
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void kembalikanPosisiCursorDanHapus()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+\end_layout
+
+\begin_layout Plain Layout
+
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+\end_layout
+
+\begin_layout Plain Layout
+
+    GetConsoleScreenBufferInfo(hStdOut, &csbi);
+\end_layout
+
+\begin_layout Plain Layout
+
+    DWORD length = csbi.dwSize.X * csbi.dwSize.Y - lastCursorPos.X * lastCursorPos.Y;
+\end_layout
+
+\begin_layout Plain Layout
+
+    DWORD writtenLength = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    FillConsoleOutputCharacter(hStdOut, ' ', length, lastCursorPos, &writtenLeng
+th);
+\end_layout
+
+\begin_layout Plain Layout
+
+    SetConsoleCursorPosition(hStdOut, lastCursorPos);
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "
+\backslash
+x1b[u";
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "
+\backslash
+x1b[0J";
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int pemilihInteraktif(vector<string> pilihan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    aktifkanInputNavigasi();
+\end_layout
+
+\begin_layout Plain Layout
+
+    Navigasi nav;
+\end_layout
+
+\begin_layout Plain Layout
+
+    bool redraw = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    string prompt = "(Tombol Panah/Atas Untuk Berpindah dan Enter untuk
+ Memilih)";
+\end_layout
+
+\begin_layout Plain Layout
+
+    int currentIndex = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << prompt << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    do
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (redraw)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        kembalikanPosisiCursorDanHapus();
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      simpanPosisiCursor();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      for (int i = 0; i < pilihan.size(); i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (i == currentIndex)
+\end_layout
+
+\begin_layout Plain Layout
+
+        {
+\end_layout
+
+\begin_layout Plain Layout
+
+          UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+          cout << "> ";
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        else
+\end_layout
+
+\begin_layout Plain Layout
+
+          cout << "  ";
+\end_layout
+
+\begin_layout Plain Layout
+
+        cout << pilihan.at(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (i == currentIndex)
+\end_layout
+
+\begin_layout Plain Layout
+
+        {
+\end_layout
+
+\begin_layout Plain Layout
+
+          cout << " (Terpilih)";
+\end_layout
+
+\begin_layout Plain Layout
+
+          UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      redraw = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+      nav = inputNavigasi();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (nav == Atas)
+\end_layout
+
+\begin_layout Plain Layout
+
+        currentIndex--;
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (nav == Bawah)
+\end_layout
+
+\begin_layout Plain Layout
+
+        currentIndex++;
+\end_layout
+
+\begin_layout Plain Layout
+
+      currentIndex = currentIndex % pilihan.size();
+\end_layout
+
+\begin_layout Plain Layout
+
+    } while (nav != Enter);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    nonaktifkanInputNavigasi();
+\end_layout
+
+\begin_layout Plain Layout
+
+    return currentIndex;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void lineBorder()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(jumlahKolom()) << setfill('-') << "" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int columnBorder(bool leftMargin, bool rightMargin)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int result = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (leftMargin)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << " ";
+\end_layout
+
+\begin_layout Plain Layout
+
+      result++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "|";
+\end_layout
+
+\begin_layout Plain Layout
+
+    result++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (rightMargin)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << " ";
+\end_layout
+
+\begin_layout Plain Layout
+
+      result++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+const string FORMAT_TANGGAL = "dd/mm/yyyy";
+\end_layout
+
+\begin_layout Plain Layout
+
+class Tanggal
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mTanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mBulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Tanggal(int tanggal, int bulan, int tahun) : mTanggal(tanggal), mBulan(bulan),
+ mTahun(tahun)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static Tanggal sekarang()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    time_t detik = time(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    tm *dataWaktu = localtime(&detik);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return Tanggal(dataWaktu->tm_mday, dataWaktu->tm_mon + 1, dataWaktu->tm_year
+ + 1900);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static int jarakHari(Tanggal dari, Tanggal ke)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    time_t jarakDetik = ke.keDetik() - dari.keDetik();
+\end_layout
+
+\begin_layout Plain Layout
+
+    return jarakDetik / 60 / 60 / 24;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  time_t keDetik()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    tm dataWaktu;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_year = mTahun - 1900;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_mon = mBulan - 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_mday = mTanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_hour = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_min = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_sec = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    dataWaktu.tm_isdst = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return mktime(&dataWaktu);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  string toString()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    stringstream stream;
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << right << setfill('0');
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(2) << mTanggal << "/";
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(2) << mBulan << "/";
+\end_layout
+
+\begin_layout Plain Layout
+
+    stream << setw(4) << mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return stream.str();
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int getTahun()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return this->mTahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_PUBLIK "Publik (Semua orang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_PRIVAT "Privat (Hanya anda yang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PESAN_VISIBILITAS_TERPROTEKSI "Terproteksi (Hanya orang yang anda
+ pilih yang bisa mengakses)"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+enum Visibilitas
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasPublik,
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasPrivat,
+\end_layout
+
+\begin_layout Plain Layout
+
+  VisibilitasTerproteksi,
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Postingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan() : tanggalTerbit(Tanggal(0, 0, 0))
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  string id;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string judul;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string tags;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Visibilitas visibilitas;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string orangYangDiizinkan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  Tanggal tanggalTerbit;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string konten;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_ID "ID"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_JUDUL "Judul"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_TAG "Tag"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_TANGGAL_TERBIT "Tanggal Terbit"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_VISIBILITAS "Visibilitas"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_KONTEN "Konten"
+\end_layout
+
+\begin_layout Plain Layout
+
+#define PROMPT_ORANG_DIIZINKAN "Orang yang Diizinkan"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class TambahPostingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput id
+\end_layout
+
+\begin_layout Plain Layout
+
+    id tidak boleh berisi spasi atau kosong
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika berisi spasi atau kosong, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan cin >> karena saat ada spasi karakter setelah spasi
+\end_layout
+
+\begin_layout Plain Layout
+
+    akan diberikan ke pertanyaan selanjutnya
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputId()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ID);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, postingan.id);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (postingan.id.find(' ') != string::npos)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tidak boleh ada spasi di dalam
+ ID");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (postingan.id.length() == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("ID tidak boleh kosong");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput Judul
+\end_layout
+
+\begin_layout Plain Layout
+
+    judul tidak boleh kosong
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika kosong, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan cin >> tidak mendukung spasi
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputJudul()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_JUDUL);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, postingan.judul);
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (postingan.judul.length() == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Judul tidak boleh kosong.");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput tanggal
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tanggal harus berformat dd/mm/yyy
+\end_layout
+
+\begin_layout Plain Layout
+
+    Jika format salah atau bukan angka, maka input diulangi
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tidak menggunakan scanf("%02d/%02d/%04d") karena jika format salah maka
+\end_layout
+
+\begin_layout Plain Layout
+
+    input diberikan ke pertanyaan selanjutnya
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputTanggalTerbit()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int tanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int bulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int tahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+    string input;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (true)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_TANGGAL_TERBIT);
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "(" << FORMAT_TANGGAL << ") ";
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, input);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      // dd/mm/yyyy
+\end_layout
+
+\begin_layout Plain Layout
+
+      //   /  /
+\end_layout
+
+\begin_layout Plain Layout
+
+      // 0123456789
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (input.length() != FORMAT_TANGGAL.length() || input.at(2) != '/' ||
+ input.at(5) != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Format tanggal tidak valid.
+ Gunakan format");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stringstream stream(input);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> tanggal;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (stream.get() != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tanggal tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> bulan;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (stream.get() != '/')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Bulan tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      stream >> tahun;
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (!stream.eof())
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tahun tidak sepenuhnya angka");
+\end_layout
+
+\begin_layout Plain Layout
+
+        continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (tanggal < 1 || tanggal > 31)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tanggal hanya boleh dari 1 sampai
+ 31");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (bulan < 1 || bulan > 12)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Bulan hanya boleh dari 1 sampai
+ 12");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (tahun < 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        UtilitasTerminal::tampilkanError("Tahun tidak boleh kurang dari
+ 1");
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    postingan.tanggalTerbit = Tanggal(tanggal, bulan, tahun);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  /*
+\end_layout
+
+\begin_layout Plain Layout
+
+    Menginput banyak baris
+\end_layout
+
+\begin_layout Plain Layout
+
+    Baris kosong digunakan untuk mengakhiri input
+\end_layout
+
+\begin_layout Plain Layout
+
+  */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputKonten()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Tulis Konten ";
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "(Mendukung Banyak Baris.
+ Akhiri dengan Baris Kosong)" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    postingan.konten = "";
+\end_layout
+
+\begin_layout Plain Layout
+
+    string baris;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    do
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, baris);
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (postingan.konten.length() > 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        postingan.konten.append("
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+      postingan.konten.append(baris);
+\end_layout
+
+\begin_layout Plain Layout
+
+    } while (baris.length() != 0);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void inputVisibilitas()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    vector<string> daftarPilihan;
+\end_layout
+
+\begin_layout Plain Layout
+
+    daftarPilihan.push_back(PESAN_VISIBILITAS_PUBLIK);
+\end_layout
+
+\begin_layout Plain Layout
+
+    daftarPilihan.push_back(PESAN_VISIBILITAS_PRIVAT);
+\end_layout
+
+\begin_layout Plain Layout
+
+    daftarPilihan.push_back(PESAN_VISIBILITAS_TERPROTEKSI);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_VISIBILITAS);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    int pilihan = UtilitasTerminal::pemilihInteraktif(daftarPilihan);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (pilihan)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+      postingan.visibilitas = VisibilitasPublik;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+      postingan.visibilitas = VisibilitasPrivat;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case 2:
+\end_layout
+
+\begin_layout Plain Layout
+
+      postingan.visibilitas = VisibilitasTerproteksi;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan postingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  void run()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanHeading("Tambah Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputId();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputJudul();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TAG);
+\end_layout
+
+\begin_layout Plain Layout
+
+    getline(cin, postingan.tags);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputTanggalTerbit();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputVisibilitas();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (postingan.visibilitas == VisibilitasTerproteksi)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ORANG_DIIZINKAN);
+\end_layout
+
+\begin_layout Plain Layout
+
+      getline(cin, postingan.orangYangDiizinkan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    inputKonten();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Tanggal tanggalSekarang = Tanggal::sekarang();
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Sekarang tanggal " << tanggalSekarang.toString() << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    int jarak = Tanggal::jarakHari(tanggalSekarang, postingan.tanggalTerbit);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (jarak == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Hari ini adalah hari penerbitan postingan anda" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Selamat postingan anda telah diterbitkan";
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (jarak < 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Tanggal penerbitan adalah " << (-jarak) << " hari yang lalu"
+ << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Postingan langsung diterbitkan" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Postingan akan diterbitkan " << jarak << " hari lagi" <<
+ endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifdef _WIN32
+\end_layout
+
+\begin_layout Plain Layout
+
+    Sleep(1000);
+\end_layout
+
+\begin_layout Plain Layout
+
+#else
+\end_layout
+
+\begin_layout Plain Layout
+
+    sleep(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bool login()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tampilkanHeading("Login");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  string username;
+\end_layout
+
+\begin_layout Plain Layout
+
+  string password;
+\end_layout
+
+\begin_layout Plain Layout
+
+  bool success = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (int i = 1; i <= 3; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::simpanPosisiCursor();
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (i != 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Merah);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Password salah" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Percobaan ke " << i << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Username");
+\end_layout
+
+\begin_layout Plain Layout
+
+    getline(cin, username);
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Password");
+\end_layout
+
+\begin_layout Plain Layout
+
+    getline(cin, password);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::kembalikanPosisiCursorDanHapus();
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (username == "admin" && password == "admin")
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      success = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (success)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Login berhasil" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  else
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Merah);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << "Login gagal" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  return success;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+vector<Postingan> buatDaftarPostingan()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  vector<Postingan> hasil;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan postingan1;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.id = "web-js";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.judul = "Web Interaktif dengan JS";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.visibilitas = VisibilitasPublik;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.konten = "JS adalah bahasa pemrograman";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.tags = "js,web";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan1.tanggalTerbit = Tanggal(21, 05, 2020);
+\end_layout
+
+\begin_layout Plain Layout
+
+  hasil.push_back(postingan1);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan postingan2;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.id = "css-responsive";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.judul = "Web Responsive dengan CSS";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.visibilitas = VisibilitasPublik;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.konten = "Web Media Query adalah kunci!";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.tags = "css,web";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan2.tanggalTerbit = Tanggal(22, 05, 2020);
+\end_layout
+
+\begin_layout Plain Layout
+
+  hasil.push_back(postingan2);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan postingan3;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.id = "cpp-iomanip";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.judul = "Manipulasi IO di C++";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.visibilitas = VisibilitasPublik;
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.konten = "Lobrary IO Manip adalah kunci!";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.tags = "cpp,io";
+\end_layout
+
+\begin_layout Plain Layout
+
+  postingan3.tanggalTerbit = Tanggal(23, 05, 2020);
+\end_layout
+
+\begin_layout Plain Layout
+
+  hasil.push_back(postingan3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  return hasil;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void tampilkanDaftarPostingan(vector<Postingan> daftar)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tampilkanHeading("Daftar Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  vector<vector<string> > grid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  vector<string> headerRow;
+\end_layout
+
+\begin_layout Plain Layout
+
+  headerRow.push_back("ID");
+\end_layout
+
+\begin_layout Plain Layout
+
+  headerRow.push_back("Judul");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  grid.push_back(headerRow);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (vector<Postingan>::iterator it = daftar.begin(); it != daftar.end();
+ it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    vector<string> currentRow;
+\end_layout
+
+\begin_layout Plain Layout
+
+    currentRow.push_back(it->id);
+\end_layout
+
+\begin_layout Plain Layout
+
+    currentRow.push_back(it->judul);
+\end_layout
+
+\begin_layout Plain Layout
+
+    grid.push_back(currentRow);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int panjangKolomId = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (vector<vector<string> >::iterator it = grid.begin(); it != grid.end();
+ it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int panjangId = it->at(0).length();
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (panjangId > panjangKolomId)
+\end_layout
+
+\begin_layout Plain Layout
+
+      panjangKolomId = panjangId;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  const int kolomMaks = UtilitasTerminal::jumlahKolom();
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::lineBorder();
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (vector<vector<string> >::iterator it = grid.begin(); it != grid.end();
+ it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    bool isHeader = it == grid.begin();
+\end_layout
+
+\begin_layout Plain Layout
+
+    int writtenCount = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    writtenCount += UtilitasTerminal::columnBorder(false, true);
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setfill(' ');
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(panjangKolomId) << it->at(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+    writtenCount += panjangKolomId;
+\end_layout
+
+\begin_layout Plain Layout
+
+    writtenCount += UtilitasTerminal::columnBorder(true, true);
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tetapkanWarna(isHeader ? UtilitasTerminal::Biru :
+ UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setfill(' ');
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << setw(kolomMaks - writtenCount - 1) << it->at(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::columnBorder(false, false);
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::lineBorder();
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class LihatPostingan
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Postingan &mPostingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  static unsigned int hitungJumlahKata(string str)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    unsigned int jumlah = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    bool didalamString = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (string::iterator it = str.begin(); it != str.end(); it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (*it == ' ' || *it == '
+\backslash
+r' || *it == '
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        didalamString = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+      else if (!didalamString)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        didalamString = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+        jumlah++;
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return jumlah;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  LihatPostingan(Postingan &postingan) : mPostingan(postingan)
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  void run()
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanHeading("Pratinjau Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_ID);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.id << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_JUDUL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.judul << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TAG);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.tags << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_TANGGAL_TERBIT);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << mPostingan.tanggalTerbit.toString() << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Visibilitas");
+\end_layout
+
+\begin_layout Plain Layout
+
+    switch (mPostingan.visibilitas)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasPublik:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_PUBLIK;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasPrivat:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_PRIVAT;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    case VisibilitasTerproteksi:
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << PESAN_VISIBILITAS_TERPROTEKSI;
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    default:
+\end_layout
+
+\begin_layout Plain Layout
+
+      break;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (mPostingan.visibilitas == VisibilitasTerproteksi)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanPrompt(PROMPT_ORANG_DIIZINKAN);
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << mPostingan.orangYangDiizinkan << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt("Jumlah Kata");
+\end_layout
+
+\begin_layout Plain Layout
+
+    int jumlahKata = hitungJumlahKata(mPostingan.konten);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << jumlahKata << " (";
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (jumlahKata < 50)
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Sedikit";
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (jumlahKata < 100)
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Sedang";
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+      cout << "Banyak";
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << ")" << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanPrompt(PROMPT_KONTEN);
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+       << mPostingan.konten;
+\end_layout
+
+\begin_layout Plain Layout
+
+    cout << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Hijau);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "Dibuat oleh ";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Biru);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "Levi Rizki Saputra ";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Kuning);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << "(" << 123230127 << ")";
+\end_layout
+
+\begin_layout Plain Layout
+
+  UtilitasTerminal::tetapkanWarna(UtilitasTerminal::Bawaan);
+\end_layout
+
+\begin_layout Plain Layout
+
+  cout << endl
+\end_layout
+
+\begin_layout Plain Layout
+
+     << endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (!login())
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  vector<Postingan> daftarPostingan = buatDaftarPostingan();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  vector<string> daftarPilihan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  daftarPilihan.push_back("Lihat Daftar Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+  daftarPilihan.push_back("Lihat Detail Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+  daftarPilihan.push_back("Tambah Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+  daftarPilihan.push_back("Logout");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  int pilihan;
+\end_layout
+
+\begin_layout Plain Layout
+
+  do
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    UtilitasTerminal::tampilkanHeading("Aksi");
+\end_layout
+
+\begin_layout Plain Layout
+
+    pilihan = UtilitasTerminal::pemilihInteraktif(daftarPilihan);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (pilihan == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      tampilkanDaftarPostingan(daftarPostingan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (pilihan == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      UtilitasTerminal::tampilkanHeading("Pilih Postingan");
+\end_layout
+
+\begin_layout Plain Layout
+
+      vector<string> pilihanPostingan;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      for (vector<Postingan>::iterator it = daftarPostingan.begin(); it !=
+ daftarPostingan.end(); it++)
+\end_layout
+
+\begin_layout Plain Layout
+
+      {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pilihanPostingan.push_back(it->judul);
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      Postingan postinganTerpilih = daftarPostingan.at(UtilitasTerminal::pemilihI
+nteraktif(pilihanPostingan));
+\end_layout
+
+\begin_layout Plain Layout
+
+      LihatPostingan form(postinganTerpilih);
+\end_layout
+
+\begin_layout Plain Layout
+
+      form.run();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (pilihan == 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    {
+\end_layout
+
+\begin_layout Plain Layout
+
+      TambahPostingan form;
+\end_layout
+
+\begin_layout Plain Layout
+
+      form.run();
+\end_layout
+
+\begin_layout Plain Layout
+
+      daftarPostingan.push_back(form.postingan);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+  } while (pilihan != 3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
